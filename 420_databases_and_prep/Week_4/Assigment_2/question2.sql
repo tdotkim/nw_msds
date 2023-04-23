@@ -1,0 +1,6 @@
+-- SQLite
+SELECT 
+    CUS_CODE, 
+    CUS_FNAME || ' ' || CUS_LNAME AS CUS_NAME
+FROM CUSTOMER
+

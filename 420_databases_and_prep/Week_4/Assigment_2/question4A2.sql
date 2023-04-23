@@ -1,0 +1,7 @@
+-- SQLite
+SELECT 
+    P_DESCRIPT,
+    MAX(P_PRICE),
+    P_QOH
+FROM PRODUCT
+

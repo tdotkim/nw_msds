@@ -1,0 +1,6 @@
+-- SQLite
+SELECT 
+    V_CODE, 
+    V_NAME
+FROM VENDOR
+
