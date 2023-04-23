@@ -1,7 +1,10 @@
 *.csv
-.DS_Store
 *.docx
 *.pdf
 *.png
 *.jpeg
 *.jpg
+*.mp4
+*.mp3
+*.xlsx
+*.db

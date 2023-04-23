@@ -1,0 +1,843 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={R Assignment \#1a (50 points)},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{R Assignment \#1a (50 points)}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\hypertarget{instructions}{%
+\subsubsection{Instructions}\label{instructions}}
+
+R markdown is a plain-text file format for integrating text and R code,
+and creating transparent, reproducible and interactive reports. An R
+markdown file (.Rmd) contains metadata, markdown and R code ``chunks'',
+and can be ``knit'' into numerous output types. Answer the test
+questions by adding R code to the fenced code areas below each item.
+Once completed, you will ``knit'' and submit the resulting .html file,
+as well the .Rmd file. The .html will include your R code \emph{and} the
+output.
+
+\textbf{Before proceeding, look to the top of the .Rmd for the (YAML)
+metadata block, where the \emph{title} and \emph{output} are given.
+Please change \emph{title} from `Programming with R Assignment \#1' to
+your name, with the format `lastName\_firstName.'}
+
+If you encounter issues with knitting the .html, please send an email
+via Canvas to your TA.
+
+Each code chunk is delineated by six (6) backticks; three (3) at the
+start and three (3) at the end. After the opening ticks, arguments are
+passed to the code chunk and in curly brackets. \textbf{Please do not
+add or remove backticks, or modify the arguments or values inside the
+curly brackets}. An example code chunk is included here:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Comments are included in each code chunk, simply as prompts}
+
+\NormalTok{...R code placed here}
+
+\NormalTok{...R code placed here}
+\end{Highlighting}
+\end{Shaded}
+
+You need only enter text inside the code chunks for each test item.
+
+Depending on the problem, grading will be based on: 1) the correct
+result, 2) coding efficiency and 3) graphical presentation features
+(labeling, colors, size, legibility, etc). I will be looking for
+well-rendered displays. In the ``knit'' document, only those results
+specified in the problem statements should be displayed. For example, do
+not output - i.e.~send to the Console - the contents of vectors or data
+frames unless requested by the problem. You should be able to code for
+each solution in fewer than ten lines; though code for your
+visualizations may exceed this.
+
+\textbf{Submit both the .Rmd and .html files for grading}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{Example Problem with Solution:} Use \emph{rbinom()} to generate
+two random samples of size 10,000 from the binomial distribution. For
+the first sample, use p = 0.45 and n = 10. For the second sample, use p
+= 0.55 and n = 10.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Convert the sample frequencies to sample proportions and compute the
+  mean number of successes for each sample. Present these statistics.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+\NormalTok{sample.one }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(}\FunctionTok{rbinom}\NormalTok{(}\DecValTok{10000}\NormalTok{, }\DecValTok{10}\NormalTok{, }\FloatTok{0.45}\NormalTok{)) }\SpecialCharTok{/} \DecValTok{10000}
+\NormalTok{sample.two }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(}\FunctionTok{rbinom}\NormalTok{(}\DecValTok{10000}\NormalTok{, }\DecValTok{10}\NormalTok{, }\FloatTok{0.55}\NormalTok{)) }\SpecialCharTok{/} \DecValTok{10000}
+
+\NormalTok{successes }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{)}
+
+\FunctionTok{sum}\NormalTok{(sample.one }\SpecialCharTok{*}\NormalTok{ successes) }\CommentTok{\# [1] 4.4827}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4.4827
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(sample.two }\SpecialCharTok{*}\NormalTok{ successes) }\CommentTok{\# [1] 5.523}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.523
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Present the proportions in a vertical, side-by-side barplot color
+  coding the two samples.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{counts }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(sample.one, sample.two)}
+
+\FunctionTok{barplot}\NormalTok{(counts, }\AttributeTok{main =} \StringTok{"Comparison of Binomial Sample Proportions"}\NormalTok{, }
+  \AttributeTok{ylab =} \StringTok{"Frequency"}\NormalTok{, }\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}\AttributeTok{xlab =} \StringTok{"Number of Successes"}\NormalTok{,}
+  \AttributeTok{beside =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\StringTok{"darkblue"}\NormalTok{,}\StringTok{"red"}\NormalTok{),}\AttributeTok{legend =} \FunctionTok{rownames}\NormalTok{(counts),}
+  \AttributeTok{names.arg =} \FunctionTok{c}\NormalTok{(}\StringTok{"0"}\NormalTok{, }\StringTok{"1"}\NormalTok{, }\StringTok{"2"}\NormalTok{, }\StringTok{"3"}\NormalTok{, }\StringTok{"4"}\NormalTok{, }\StringTok{"5"}\NormalTok{, }\StringTok{"6"}\NormalTok{, }\StringTok{"7"}\NormalTok{, }\StringTok{"8"}\NormalTok{, }\StringTok{"9"}\NormalTok{, }\StringTok{"10"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Assignment_1a_files/figure-latex/testExampleB-1.pdf}
+
+\hypertarget{please-delete-the-instructions-and-examples-shown-above-prior-to-submitting-your-.rmd-and-.html-files.}{%
+\paragraph{Please delete the Instructions and Examples shown above prior
+to submitting your .Rmd and .html
+files.}\label{please-delete-the-instructions-and-examples-shown-above-prior-to-submitting-your-.rmd-and-.html-files.}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{test-items-starts-from-here---there-are-5-sections---50-points-total}{%
+\subsubsection{Test Items starts from here - There are 5 sections - 50
+points
+total}\label{test-items-starts-from-here---there-are-5-sections---50-points-total}}
+
+Read each question carefully and address each element. Do not output
+contents of vectors or data frames unless requested.
+
+\hypertarget{section-1-8-points-this-problem-deals-with-vector-manipulations.}{%
+\subparagraph{Section 1: (8 points) This problem deals with vector
+manipulations.}\label{section-1-8-points-this-problem-deals-with-vector-manipulations.}}
+
+(1)(a) Create a vector that contains the following, in this order, and
+output the final, resulting vector. Do not round any values, unless
+requested. * A sequence of integers from 0 to 4, inclusive. * The number
+13 * Three repetitions of the vector c(2, -5.1, -23). * The arithmetic
+sum of 7/42, 3 and 35/42
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{triple\_peat }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\SpecialCharTok{{-}}\FloatTok{5.1}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{23}\NormalTok{)}
+
+\NormalTok{arith\_vector }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(}\FunctionTok{c}\NormalTok{((}\DecValTok{7}\SpecialCharTok{/}\DecValTok{42}\NormalTok{),}\DecValTok{3}\NormalTok{,(}\DecValTok{35}\SpecialCharTok{/}\DecValTok{42}\NormalTok{)))}
+
+\NormalTok{test1a\_vector }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\SpecialCharTok{:}\DecValTok{4}\NormalTok{,}\DecValTok{13}\NormalTok{,}\FunctionTok{rep}\NormalTok{(triple\_peat, }\AttributeTok{times =} \DecValTok{3}\NormalTok{),arith\_vector)}
+\NormalTok{test1a\_vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]   0.0   1.0   2.0   3.0   4.0  13.0   2.0  -5.1 -23.0   2.0  -5.1 -23.0
+## [13]   2.0  -5.1 -23.0   4.0
+\end{verbatim}
+
+(1)(b) Sort the vector created in (1)(a) in ascending order. Output this
+result. Determine the length of the resulting vector and assign to
+``L''. Output L. Generate a descending sequence starting with L and
+ending with 1. Add this descending sequence arithmetically the sorted
+vector. This is vector addition, not vector combination. Output the
+contents. Do not round any values.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sorted\_vector }\OtherTok{\textless{}{-}} \FunctionTok{sort}\NormalTok{(test1a\_vector,}\AttributeTok{decreasing =} \ConstantTok{FALSE}\NormalTok{)}
+\NormalTok{sorted\_vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] -23.0 -23.0 -23.0  -5.1  -5.1  -5.1   0.0   1.0   2.0   2.0   2.0   2.0
+## [13]   3.0   4.0   4.0  13.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{L }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(sorted\_vector)}
+\NormalTok{L}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 16
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{desc\_seq }\OtherTok{\textless{}{-}}\NormalTok{ L}\SpecialCharTok{:}\DecValTok{1}
+\NormalTok{desc\_seq}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{added\_vector }\OtherTok{\textless{}{-}}\NormalTok{ sorted\_vector }\SpecialCharTok{+}\NormalTok{ desc\_seq}
+\NormalTok{added\_vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] -7.0 -8.0 -9.0  7.9  6.9  5.9 10.0 10.0 10.0  9.0  8.0  7.0  7.0  7.0  6.0
+## [16] 14.0
+\end{verbatim}
+
+(1)(c) Extract the first and last elements of the vector you have
+created in (1)(b) to form another vector of the extracted elements. Form
+a third vector from the elements not extracted. Output these vectors.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{extract\_vector }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(added\_vector[}\DecValTok{1}\NormalTok{],}\FunctionTok{tail}\NormalTok{(added\_vector,}\AttributeTok{n=}\DecValTok{1}\NormalTok{))}
+\NormalTok{extract\_vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -7 14
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{unextract\_vector }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(added\_vector[}\DecValTok{2}\SpecialCharTok{:}\NormalTok{(}\FunctionTok{length}\NormalTok{(added\_vector)}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{)])}
+\NormalTok{unextract\_vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] -8.0 -9.0  7.9  6.9  5.9 10.0 10.0 10.0  9.0  8.0  7.0  7.0  7.0  6.0
+\end{verbatim}
+
+(1)(d) Use the vectors from (c) to reconstruct the vector in (b). Output
+this vector. Sum the elements.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reconstructed\_vector }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(extract\_vector[}\DecValTok{1}\NormalTok{],unextract\_vector,extract\_vector[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{])}
+\NormalTok{reconstructed\_vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] -7.0 -8.0 -9.0  7.9  6.9  5.9 10.0 10.0 10.0  9.0  8.0  7.0  7.0  7.0  6.0
+## [16] 14.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{summed\_reconstruct }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(reconstructed\_vector)}
+\NormalTok{summed\_reconstruct}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 84.7
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{section-2-10-points-the-expression-y-sinx2-cosx2-is-a-trigonometric-function.}{%
+\subparagraph{Section 2: (10 points) The expression y = sin(x/2) +
+cos(x/2) is a trigonometric
+function.}\label{section-2-10-points-the-expression-y-sinx2-cosx2-is-a-trigonometric-function.}}
+
+(2)(a) Create a user-defined function - via \emph{function()} - that
+implements the trigonometric function above, accepts numeric values,
+``x,'' calculates and returns values ``y.''
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{test2a\_trig\_func }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+\NormalTok{  y }\OtherTok{\textless{}{-}} \FunctionTok{sin}\NormalTok{(x}\SpecialCharTok{/}\DecValTok{2}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{cos}\NormalTok{(x}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+  \FunctionTok{return}\NormalTok{(y)}
+\NormalTok{\}}
+
+\CommentTok{\# for testing, the following should return}
+\CommentTok{\# 0.4931506}
+\CommentTok{\# test2a\_trig\_func(4)}
+\end{Highlighting}
+\end{Shaded}
+
+(2)(b) Create a vector, x, of 4001 equally-spaced values from -2 to 2,
+inclusive. Compute values for y using the vector x and your function
+from (2)(a). \textbf{Do not output x or y.} Find the value in the vector
+x that corresponds to the maximum value in the vector y. Restrict
+attention to only the values of x and y you have computed; i.e.~do not
+interpolate. Round to 3 decimal places and output both the maximum y and
+corresponding x value.
+
+Finding the two desired values can be accomplished in as few as two
+lines of code. Do not use packages or programs you may find on the
+internet or elsewhere. Do not output the other elements of the vectors x
+and y. Relevant coding methods are given in the \emph{Quick Start Guide
+for R}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(glue)}
+
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\AttributeTok{length.out =} \DecValTok{4001}\NormalTok{))}
+\NormalTok{y }\OtherTok{\textless{}{-}} \FunctionTok{unlist}\NormalTok{(}\FunctionTok{lapply}\NormalTok{(x,}\AttributeTok{FUN=}\NormalTok{test2a\_trig\_func))}
+
+\NormalTok{max\_y }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(y)}
+
+\NormalTok{max\_y\_index }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(y }\SpecialCharTok{==}\NormalTok{ max\_y)}
+
+\NormalTok{max\_x }\OtherTok{\textless{}{-}}\NormalTok{ x[max\_y\_index]}
+
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Max xy = ("}\NormalTok{,max\_x,}\StringTok{\textquotesingle{},\textquotesingle{}}\NormalTok{,}\FunctionTok{round}\NormalTok{(max\_y,}\DecValTok{3}\NormalTok{),}\StringTok{\textquotesingle{})\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Max xy = ( 1.571 , 1.414 )"
+\end{verbatim}
+
+(2)(c) Plot y versus x in color, with x on the horizontal axis. Show the
+location of the maximum value of y determined in 2(b). Show the values
+of x and y corresponding to the maximum value of y in the display. Add a
+title and other features such as text annotations. Text annotations may
+be added via \emph{text()} for base R plots and \emph{geom\_text()} or
+\emph{geom\_label()} for ggplots.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------- tidyverse 1.3.2 --
+## v ggplot2 3.4.0      v purrr   1.0.0 
+## v tibble  3.1.8      v dplyr   1.0.10
+## v tidyr   1.2.1      v stringr 1.5.0 
+## v readr   2.1.3      v forcats 0.5.2 
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{trig\_df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(x,y)}
+\NormalTok{max\_df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(max\_x,max\_y)}
+\NormalTok{max\_point }\OtherTok{\textless{}{-}}\NormalTok{ trig\_df[}\FunctionTok{which.max}\NormalTok{(trig\_df}\SpecialCharTok{$}\NormalTok{y),]}
+
+
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{trig\_df, }\FunctionTok{aes}\NormalTok{(x, y)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{color =} \StringTok{\textquotesingle{}black\textquotesingle{}}\NormalTok{,}\AttributeTok{size =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ trig\_df[}\FunctionTok{which.max}\NormalTok{(trig\_df}\SpecialCharTok{$}\NormalTok{y),],}\AttributeTok{color=}\StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{,}\AttributeTok{size=}\DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{data =}\NormalTok{ trig\_df[}\FunctionTok{which.max}\NormalTok{(trig\_df}\SpecialCharTok{$}\NormalTok{y),], }
+             \FunctionTok{aes}\NormalTok{(x,y,}\AttributeTok{label=}\FunctionTok{paste}\NormalTok{(}\StringTok{"max = ("}\NormalTok{,max\_x,}\StringTok{","}\NormalTok{,}\FunctionTok{round}\NormalTok{(max\_y,}\DecValTok{3}\NormalTok{),}\StringTok{")"}\NormalTok{)),}\AttributeTok{nudge\_y =}\NormalTok{ .}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Assignment_1a_files/figure-latex/test2c-1.pdf}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{section-3-8-points-this-problem-requires-finding-the-point-of-intersection-of-two-functions.-using-the-function-y-cosx-2-sinx-2-find-where-the-curved-line-y--x23-intersects-it-within-the-range-of-values-used-in-part-2-i.e.-4001-equally-spaced-values-from--2-to-2.-plot-both-functions-on-the-same-display-and-show-the-point-of-intersection.-present-the-coordinates-of-this-point-as-text-in-the-display.}{%
+\subparagraph{\texorpdfstring{Section 3: (8 points) This problem
+requires finding the point of intersection of two functions. Using the
+function \texttt{y\ =\ cos(x\ /\ 2)\ *\ sin(x\ /\ 2)}, find where the
+curved line y = -(x/2)\^{}3 intersects it within the range of values
+used in part (2) (i.e.~4001 equally-spaced values from -2 to 2). Plot
+both functions on the same display, and show the point of intersection.
+Present the coordinates of this point as text in the
+display.}{Section 3: (8 points) This problem requires finding the point of intersection of two functions. Using the function y = cos(x / 2) * sin(x / 2), find where the curved line y = -(x/2)\^{}3 intersects it within the range of values used in part (2) (i.e.~4001 equally-spaced values from -2 to 2). Plot both functions on the same display, and show the point of intersection. Present the coordinates of this point as text in the display.}}\label{section-3-8-points-this-problem-requires-finding-the-point-of-intersection-of-two-functions.-using-the-function-y-cosx-2-sinx-2-find-where-the-curved-line-y--x23-intersects-it-within-the-range-of-values-used-in-part-2-i.e.-4001-equally-spaced-values-from--2-to-2.-plot-both-functions-on-the-same-display-and-show-the-point-of-intersection.-present-the-coordinates-of-this-point-as-text-in-the-display.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\NormalTok{func\_one }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x) \{}
+\NormalTok{  y }\OtherTok{\textless{}{-}} \FunctionTok{cos}\NormalTok{(x }\SpecialCharTok{/} \DecValTok{2}\NormalTok{) }\SpecialCharTok{*} \FunctionTok{sin}\NormalTok{(x }\SpecialCharTok{/} \DecValTok{2}\NormalTok{)}
+  \FunctionTok{return}\NormalTok{(y)}
+\NormalTok{\}}
+
+\NormalTok{func\_two }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x)\{}
+\NormalTok{  y }\OtherTok{\textless{}{-}} \SpecialCharTok{{-}}\NormalTok{(x}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{3}
+  \FunctionTok{return}\NormalTok{(y)}
+\NormalTok{\}}
+
+\NormalTok{x\_3 }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\AttributeTok{length=}\DecValTok{4001}\NormalTok{)}
+
+\NormalTok{y\_one }\OtherTok{\textless{}{-}} \FunctionTok{unlist}\NormalTok{(}\FunctionTok{lapply}\NormalTok{(x\_3,}\AttributeTok{FUN=}\NormalTok{func\_one))}
+
+\NormalTok{y\_two }\OtherTok{\textless{}{-}} \FunctionTok{unlist}\NormalTok{(}\FunctionTok{lapply}\NormalTok{(x\_3,}\AttributeTok{FUN=}\NormalTok{func\_two))}
+
+\NormalTok{sec3\_df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(x\_3,y\_one,y\_two)}
+
+\NormalTok{intersection }\OtherTok{\textless{}{-}}\NormalTok{ sec3\_df[sec3\_df}\SpecialCharTok{$}\NormalTok{y\_one }\SpecialCharTok{==}\NormalTok{ sec3\_df}\SpecialCharTok{$}\NormalTok{y\_two,]}
+\CommentTok{\#paste("intersection = (",intersection$x\_3,",",intersection$y\_one,")")}
+
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{sec3\_df, }\FunctionTok{aes}\NormalTok{(x\_3)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ y\_one), }\AttributeTok{color =} \StringTok{"red"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ y\_two), }\AttributeTok{color =} \StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{intersection}\SpecialCharTok{$}\NormalTok{x\_3, }\AttributeTok{y=}\NormalTok{intersection}\SpecialCharTok{$}\NormalTok{y\_one), }\AttributeTok{size =} \DecValTok{5}\NormalTok{, }\AttributeTok{colour=}\StringTok{"purple"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{data=}\NormalTok{sec3\_df,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{intersection}\SpecialCharTok{$}\NormalTok{x\_3, }\AttributeTok{y=}\NormalTok{intersection}\SpecialCharTok{$}\NormalTok{y\_one, }
+            \AttributeTok{label=}\FunctionTok{paste}\NormalTok{(}\StringTok{"intersection = ("}\NormalTok{,intersection}\SpecialCharTok{$}\NormalTok{x\_3,}\StringTok{","}\NormalTok{,intersection}\SpecialCharTok{$}\NormalTok{y\_one,}\StringTok{")"}\NormalTok{),}
+            \AttributeTok{vjust =} \SpecialCharTok{{-}}\DecValTok{3}\NormalTok{)}
+\NormalTok{            )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Assignment_1a_files/figure-latex/test3-1.pdf}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{section-4-12-points-use-the-trees-dataset-for-the-following-items.-this-dataset-has-three-variables-girth-height-volume-on-31-felled-black-cherry-trees.}{%
+\subparagraph{Section 4: (12 points) Use the ``trees'' dataset for the
+following items. This dataset has three variables (Girth, Height,
+Volume) on 31 felled black cherry
+trees.}\label{section-4-12-points-use-the-trees-dataset-for-the-following-items.-this-dataset-has-three-variables-girth-height-volume-on-31-felled-black-cherry-trees.}}
+
+(4)(a) Use \emph{data(trees)} to load the dataset. Check and output the
+structure with \emph{str()}. Use \emph{apply()} to return the median
+values for the three variables. Output these values. Using R and
+logicals, output the row number and the three measurements - Girth,
+Height and Volume - of any trees with Girth equal to median Girth. It is
+possible to accomplish this last request with one line of code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data}\NormalTok{(trees)}
+\NormalTok{trees\_df }\OtherTok{=}\NormalTok{ trees}
+
+\NormalTok{medians }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(trees\_df,}\DecValTok{2}\NormalTok{,median)}
+
+\CommentTok{\#get the index where girth == medians[1]}
+\NormalTok{girth\_index }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(trees\_df}\SpecialCharTok{$}\NormalTok{Girth }\SpecialCharTok{==}\NormalTok{ medians[}\DecValTok{1}\NormalTok{])}
+\CommentTok{\#print the rows from the df}
+\NormalTok{girth\_rows }\OtherTok{\textless{}{-}}\NormalTok{ trees\_df[girth\_index,]}
+\FunctionTok{print}\NormalTok{(girth\_rows)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Girth Height Volume
+## 16  12.9     74   22.2
+## 17  12.9     85   33.8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#do the above for height}
+\NormalTok{height\_index }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(trees\_df}\SpecialCharTok{$}\NormalTok{Height }\SpecialCharTok{==}\NormalTok{ medians[}\DecValTok{2}\NormalTok{])}
+\NormalTok{height\_rows }\OtherTok{\textless{}{-}}\NormalTok{ trees\_df[height\_index,]}
+\FunctionTok{print}\NormalTok{(height\_rows)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Girth Height Volume
+## 12  11.4     76   21.0
+## 13  11.4     76   21.4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#do the above for volume}
+\NormalTok{volume\_index }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(trees\_df}\SpecialCharTok{$}\NormalTok{Volume }\SpecialCharTok{==}\NormalTok{ medians[}\DecValTok{3}\NormalTok{])}
+\NormalTok{volume\_rows }\OtherTok{\textless{}{-}}\NormalTok{ trees\_df[volume\_index,]}
+\FunctionTok{print}\NormalTok{(volume\_rows)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Girth Height Volume
+## 11  11.3     79   24.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#one line output?}
+\NormalTok{all\_rows }\OtherTok{\textless{}{-}}\NormalTok{ trees\_df[}\FunctionTok{c}\NormalTok{(girth\_index,height\_index,volume\_index),]}
+\FunctionTok{print}\NormalTok{(all\_rows)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Girth Height Volume
+## 16  12.9     74   22.2
+## 17  12.9     85   33.8
+## 12  11.4     76   21.0
+## 13  11.4     76   21.4
+## 11  11.3     79   24.2
+\end{verbatim}
+
+(4)(b) Girth is defined as the diameter of a tree taken at 4 feet 6
+inches from the ground. Convert each diameter to a radius, r. Calculate
+the cross-sectional area of each tree using pi times the squared radius.
+Present a stem-and-leaf plot of the radii, and a histogram of the radii
+in color. Plot Area (y-axis) versus Radius (x-axis) in color showing the
+individual data points. Label appropriately.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\NormalTok{trees\_df}\SpecialCharTok{$}\NormalTok{radius }\OtherTok{\textless{}{-}} \FunctionTok{with}\NormalTok{(trees\_df, Girth }\SpecialCharTok{/} \DecValTok{2}\NormalTok{)}
+
+\NormalTok{trees\_df}\SpecialCharTok{$}\NormalTok{area }\OtherTok{\textless{}{-}} \FunctionTok{with}\NormalTok{(trees\_df, pi }\SpecialCharTok{*}\NormalTok{ radius }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{)}
+
+\CommentTok{\#make stem \& leaf}
+\NormalTok{radius\_sl }\OtherTok{\textless{}{-}} \FunctionTok{stem}\NormalTok{(trees\_df}\SpecialCharTok{$}\NormalTok{radius)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##   The decimal point is at the |
+## 
+##    4 | 234
+##    5 | 34455667779
+##    6 | 055799
+##    7 | 013
+##    8 | 0278
+##    9 | 000
+##   10 | 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{radius\_sl}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## NULL
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#neat bin width calculation formula found online}
+\NormalTok{radius\_bw }\OtherTok{\textless{}{-}} \DecValTok{2} \SpecialCharTok{*} \FunctionTok{IQR}\NormalTok{(trees\_df}\SpecialCharTok{$}\NormalTok{radius) }\SpecialCharTok{/} \FunctionTok{length}\NormalTok{(trees\_df}\SpecialCharTok{$}\NormalTok{radius)}\SpecialCharTok{\^{}}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\DecValTok{3}\NormalTok{)}
+
+\CommentTok{\#make the histogram}
+\NormalTok{radius\_hist }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{trees\_df,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{radius)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{fill=}\StringTok{"purple"}\NormalTok{, }\AttributeTok{binwidth =}\NormalTok{ radius\_bw) }\SpecialCharTok{+}
+  \FunctionTok{stat\_bin}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{..count.., }\AttributeTok{label=}\NormalTok{..count..), }\AttributeTok{binwidth =}\NormalTok{ radius\_bw, }\AttributeTok{geom=}\StringTok{"text"}\NormalTok{, }\AttributeTok{vjust=}\SpecialCharTok{{-}}\NormalTok{.}\DecValTok{5}\NormalTok{) }
+
+\NormalTok{radius\_hist}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: The dot-dot notation (`..count..`) was deprecated in ggplot2 3.4.0.
+## i Please use `after_stat(count)` instead.
+\end{verbatim}
+
+\includegraphics{R_Assignment_1a_files/figure-latex/test3b-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#make the scatter plot}
+\NormalTok{radius\_area\_chart }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{trees\_df,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{radius,}\AttributeTok{y=}\NormalTok{area)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \DecValTok{4}\NormalTok{, }\AttributeTok{color =} \StringTok{"pink"}\NormalTok{)}
+\NormalTok{radius\_area\_chart}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Assignment_1a_files/figure-latex/test3b-2.pdf}
+
+(4)(c) Present a horizontal, notched, colored boxplot of the areas
+calculated in (b). Title and label the axis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{area\_box }\OtherTok{\textless{}{-}} \FunctionTok{boxplot}\NormalTok{(trees\_df}\SpecialCharTok{$}\NormalTok{area,}
+                    \AttributeTok{horizontal=}\ConstantTok{TRUE}\NormalTok{, }
+                    \AttributeTok{notch=}\ConstantTok{TRUE}\NormalTok{,}
+                    \AttributeTok{col=}\StringTok{"green"}\NormalTok{, }
+                    \AttributeTok{xlab =} \StringTok{"area"}\NormalTok{)}
+\FunctionTok{title}\NormalTok{(}\StringTok{"area boxplot"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Assignment_1a_files/figure-latex/test3c-1.pdf}
+
+(4)(d) Demonstrate that the outlier revealed in the boxplot of Area is
+not an extreme outlier. (Note: Extreme outlier is defined as a value
+that falls outside the boundaries of Q1- 3\emph{IQR and Q3+ 3}IQR. Note
+that R uses Q1 -1.5\emph{IQR and Q3+1.5}IQR as default values to
+identify outliers). It is possible to do this with one line of code
+using \emph{boxplot.stats()} or `manual' calculation and logicals.
+Identify the tree with the largest area and output on one line its row
+number and three measurements.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{outlier }\OtherTok{\textless{}{-}}\NormalTok{ area\_box}\SpecialCharTok{$}\NormalTok{out}
+\NormalTok{outlier\_row }\OtherTok{\textless{}{-}}\NormalTok{ trees\_df[}\FunctionTok{which}\NormalTok{(trees\_df}\SpecialCharTok{$}\NormalTok{area }\SpecialCharTok{==}\NormalTok{ outlier),]}
+\NormalTok{outlier\_row}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Girth Height Volume radius     area
+## 31  20.6     87     77   10.3 333.2916
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#one line using max()}
+\NormalTok{max\_area\_row }\OtherTok{\textless{}{-}}\NormalTok{ trees\_df[}\FunctionTok{which.max}\NormalTok{(trees\_df}\SpecialCharTok{$}\NormalTok{area),]}
+\NormalTok{max\_area\_row}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Girth Height Volume radius     area
+## 31  20.6     87     77   10.3 333.2916
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{section-5-12-points-the-exponential-distribution-is-an-example-of-a-right-skewed-distribution-with-outliers.-this-problem-involves-comparing-it-with-a-normal-distribution-which-typically-has-very-few-outliers.}{%
+\subparagraph{Section 5: (12 points) The exponential distribution is an
+example of a right-skewed distribution with outliers. This problem
+involves comparing it with a normal distribution which typically has
+very few
+outliers.}\label{section-5-12-points-the-exponential-distribution-is-an-example-of-a-right-skewed-distribution-with-outliers.-this-problem-involves-comparing-it-with-a-normal-distribution-which-typically-has-very-few-outliers.}}
+
+5(a) Use \emph{set.seed(124)} and \emph{rexp()} with n = 100, rate = 5.5
+to generate a random sample designated as y. Generate a second random
+sample designated as x with \emph{set.seed(127)} and \emph{rnorm()}
+using n = 100, mean = 0 and sd = 0.15.
+
+Generate a new object using \emph{cbind(x, y)}. Do not output this
+object; instead, assign it to a new name. Pass this object to
+\emph{apply()} and compute the inter-quartile range (IQR) for each
+column: x and y. Use the function \emph{IQR()} for this purpose. Round
+the results to four decimal places and present (this exercise shows the
+similarity of the IQR values.).
+
+For information about \emph{rexp()}, use \emph{help(rexp)} or
+\emph{?rexp()}. \textbf{Do not output x or y.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{124}\NormalTok{)}
+\NormalTok{y\_5 }\OtherTok{\textless{}{-}} \FunctionTok{rexp}\NormalTok{(}\DecValTok{100}\NormalTok{,}\AttributeTok{rate =} \FloatTok{5.5}\NormalTok{)}
+
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{127}\NormalTok{)}
+\NormalTok{x\_5 }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{,}\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \FloatTok{0.15}\NormalTok{)}
+
+\NormalTok{xy\_5 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(x\_5,y\_5)}
+
+\CommentTok{\#type 6 gets the 3 digit round to be equal, and need round to 4 digit}
+\CommentTok{\#default type 7 doesn\textquotesingle{}t get us close per the instruction}
+\NormalTok{iqr\_5 }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(xy\_5,}\DecValTok{2}\NormalTok{,IQR, }\AttributeTok{type =} \DecValTok{6}\NormalTok{)}
+
+\FunctionTok{round}\NormalTok{(iqr\_5,}\AttributeTok{digits =} \DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    x_5    y_5 
+## 0.2151 0.2206
+\end{verbatim}
+
+(5)(b) This item will illustrate the difference between a right-skewed
+distribution and a symmetric one. For base R plots, use \emph{par(mfrow
+= c(2, 2))} to generate a display with four diagrams;
+\emph{grid.arrange()} for ggplots. On the first row, for the normal
+results, present a histogram and a horizontal boxplot for x in color.
+For the exponential results, present a histogram and a horizontal
+boxplot for y in color.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow =} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{))}
+\FunctionTok{hist}\NormalTok{(x\_5, }\AttributeTok{xlab =} \StringTok{"normal distribution"}\NormalTok{, }\AttributeTok{col =} \StringTok{"purple"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Normal Histogram"}\NormalTok{)}
+\FunctionTok{boxplot}\NormalTok{(x\_5, }\AttributeTok{horizontal =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"normal distribution"}\NormalTok{, }\AttributeTok{col =} \StringTok{"purple"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Normal Box Plot"}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(y\_5, }\AttributeTok{xlab =} \StringTok{"exponential distribution"}\NormalTok{, }\AttributeTok{col =} \StringTok{"gold"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Exponential Histogram"}\NormalTok{)}
+\FunctionTok{boxplot}\NormalTok{(y\_5, }\AttributeTok{horizontal =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"exponential distribution"}\NormalTok{, }\AttributeTok{col =} \StringTok{"gold"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Exponetial Box Plot"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Assignment_1a_files/figure-latex/test5b-1.pdf}
+
+(5)(c) QQ plots are useful for detecting the presence of heavy-tailed
+distributions. Present side-by-side QQ plots, one for each sample, using
+\emph{qqnorm()} and \emph{qqline()}. Add color and titles. In base R
+plots, ``cex'' can be used to control the size of the plotted data
+points and text; ``size'' for ggplot2 figures. Lastly, determine if
+there are any extreme outliers in either sample.Remember extreme
+outliers are based on 3 multiplied by the IQR in the box plot. R uses a
+default value of 1.5 times the IQR to define outliers (not extreme) in
+both boxplot and boxplot stats.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(glue)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{))}
+\CommentTok{\#thin tail due to left end being above and right end being below}
+\FunctionTok{qqnorm}\NormalTok{(x\_5,}\AttributeTok{col =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Norm Dist QQ Plot"}\NormalTok{)}
+\FunctionTok{qqline}\NormalTok{(x\_5, }\AttributeTok{col =} \StringTok{"red"}\NormalTok{)}
+\CommentTok{\#right skewed since curve above line both ends}
+\FunctionTok{qqnorm}\NormalTok{(y\_5, }\AttributeTok{col =} \StringTok{"green"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Expo Dist QQ Plot"}\NormalTok{)}
+\FunctionTok{qqline}\NormalTok{(y\_5, }\AttributeTok{col =} \StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Assignment_1a_files/figure-latex/test5c-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#get q1 and q3 for x then calc bounds}
+\NormalTok{x\_5\_quantiles }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{quantile}\NormalTok{(x\_5,}\FloatTok{0.25}\NormalTok{),}\FunctionTok{quantile}\NormalTok{(x\_5,}\FloatTok{0.75}\NormalTok{))}
+\NormalTok{x\_5\_3iqr }\OtherTok{\textless{}{-}}\NormalTok{ (x\_5\_quantiles[}\DecValTok{2}\NormalTok{] }\SpecialCharTok{{-}}\NormalTok{ x\_5\_quantiles[}\DecValTok{1}\NormalTok{]) }\SpecialCharTok{*} \DecValTok{3}
+\NormalTok{x\_5\_bounds }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{((x\_5\_quantiles[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{{-}}\NormalTok{  x\_5\_3iqr),(x\_5\_quantiles[}\DecValTok{2}\NormalTok{] }\SpecialCharTok{+}\NormalTok{ x\_5\_3iqr))}
+\CommentTok{\#get q1 and q3 for y x then calc bounds}
+\NormalTok{y\_5\_quantiles }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{quantile}\NormalTok{(y\_5,}\FloatTok{0.25}\NormalTok{),}\FunctionTok{quantile}\NormalTok{(y\_5,}\FloatTok{0.75}\NormalTok{))}
+\NormalTok{y\_5\_3iqr }\OtherTok{\textless{}{-}}\NormalTok{ (y\_5\_quantiles[}\DecValTok{2}\NormalTok{] }\SpecialCharTok{{-}}\NormalTok{ y\_5\_quantiles[}\DecValTok{1}\NormalTok{]) }\SpecialCharTok{*} \DecValTok{3}
+\NormalTok{y\_5\_bounds }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{((y\_5\_quantiles[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{{-}}\NormalTok{  y\_5\_3iqr),(y\_5\_quantiles[}\DecValTok{2}\NormalTok{] }\SpecialCharTok{+}\NormalTok{ y\_5\_3iqr))}
+
+\CommentTok{\#x outliers are empty}
+\NormalTok{x\_5\_ext\_outliers }\OtherTok{\textless{}{-}}\NormalTok{ xy\_5[}\FunctionTok{which}\NormalTok{(x\_5 }\SpecialCharTok{\textless{}}\NormalTok{ x\_5\_bounds[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{|}\NormalTok{ x\_5 }\SpecialCharTok{\textgreater{}}\NormalTok{ x\_5\_bounds[}\DecValTok{2}\NormalTok{])]}
+\FunctionTok{glue}\NormalTok{(}\StringTok{\textquotesingle{}extreme outliers for x: \{x\_5\_ext\_outliers\}\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{y\_5\_ext\_outliers }\OtherTok{\textless{}{-}}\NormalTok{ xy\_5[}\FunctionTok{which}\NormalTok{(y\_5 }\SpecialCharTok{\textless{}}\NormalTok{ y\_5\_bounds[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{|}\NormalTok{ y\_5 }\SpecialCharTok{\textgreater{}}\NormalTok{ y\_5\_bounds[}\DecValTok{2}\NormalTok{])]}
+\FunctionTok{glue}\NormalTok{(}\StringTok{\textquotesingle{}extreme outliers for y: \{y\_5\_ext\_outliers\}\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## extreme outliers for y: -0.0469025955882937
+\end{verbatim}
+
+\end{document}

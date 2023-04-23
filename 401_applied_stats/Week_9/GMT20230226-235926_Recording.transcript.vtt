@@ -1,0 +1,2382 @@
+WEBVTT
+
+1
+00:00:21.980 --> 00:00:27.620
+Robert Barr: Good evening, everybody. and welcome to our final session
+
+2
+00:00:27.650 --> 00:00:33.070
+going over the data Analysis Project Number 2.
+
+3
+00:00:34.750 --> 00:00:41.530
+Robert Barr: I'm. Going to start this evening by sharing my screen
+
+4
+00:00:45.870 --> 00:00:54.460
+Robert Barr: hopefully. Everybody will be able to see this good on the recording. and then i'm going to open up our file.
+
+5
+00:00:58.180 --> 00:00:59.540
+Robert Barr: which is in
+
+6
+00:00:59.680 --> 00:01:01.900
+my D 2 directory.
+
+7
+00:01:03.620 --> 00:01:09.720
+Robert Barr: and this is the assignment file. So let's see. Get that open here.
+
+8
+00:01:11.010 --> 00:01:15.000
+Robert Barr: Okay, so of course, make sure to put your name
+
+9
+00:01:16.080 --> 00:01:17.430
+Robert Barr: in there.
+
+10
+00:01:21.150 --> 00:01:35.360
+Robert Barr: Okay. And then, as always, just make sure to read through this. But know that you can delete all of the unnecessary, you know, instructions and explanations.
+
+11
+00:01:35.400 --> 00:01:46.680
+Robert Barr: Also make sure to just remember that you're gonna submit. Both your HTML file and your knitted HTML file and your Rmd file
+
+12
+00:01:48.540 --> 00:01:53.770
+Robert Barr: just want to make sure you this is data analysis to nit.
+
+13
+00:01:54.300 --> 00:01:58.460
+Submit the HTML and the R. And D. File looked at.
+
+14
+00:01:58.480 --> 00:02:00.050
+Robert Barr: Make sure you
+
+15
+00:02:00.250 --> 00:02:07.590
+Robert Barr: set the title, author and output are given. Don't, you know you don't want to mess with any of this stuff.
+
+16
+00:02:07.810 --> 00:02:10.440
+Robert Barr: Just you can, you know.
+
+17
+00:02:10.470 --> 00:02:16.600
+Robert Barr: Change this up if you want, maybe a little bit, just, you know, remove the the points, but
+
+18
+00:02:17.380 --> 00:02:20.470
+Robert Barr: really not too much required of you. There.
+
+19
+00:02:20.510 --> 00:02:37.280
+Robert Barr: then, obviously, you know. So put your name in there, and then I I don't remember, if it's required. I have to re-look, but I always made it a habit of saving my file, as like
+
+20
+00:02:38.910 --> 00:02:46.180
+Robert Barr: I would say, you know last name first name kind of thing, you know. I I keep the the file name, and
+
+21
+00:02:47.230 --> 00:03:00.090
+Robert Barr: that would just name it like that. Just so my instructor was able to see it. Really. Well, all right, let's jump into the final assignment. So you kind of can not. Your kind of you are continuing
+
+22
+00:03:00.220 --> 00:03:10.750
+Robert Barr: from the previous assignment data and Alice assignment analyzing the abalone data. Okay, we're gonna just kind of continue along here.
+
+23
+00:03:10.800 --> 00:03:19.940
+They you want to make sure that you have your my data, Csv file from the previous assignment.
+
+24
+00:03:20.100 --> 00:03:26.050
+Robert Barr: If, for some reason you don't have it, let me just jump out to canvas
+
+25
+00:03:26.350 --> 00:03:32.240
+Robert Barr: and look at the assignment, I think that it's always included. Let me
+
+26
+00:03:32.490 --> 00:03:34.200
+Robert Barr: jump down here.
+
+27
+00:03:37.000 --> 00:03:40.930
+Robert Barr: Take a look at the data analysis assignment.
+
+28
+00:03:41.380 --> 00:03:56.010
+Robert Barr: I'm in canvas. Here, let me move this down to my screen. And yeah, so you have some background which I always recommend reading just you know. Specifically, this is what it looks like. It's. It's this, you know. Analysis overview a little bit of the
+
+29
+00:03:56.010 --> 00:04:07.910
+Robert Barr: the the project background about the abalone hopefully you've. Read it earlier, but just it's also important to re-familiarize yourself with the variables that you're going to be working with. Okay.
+
+30
+00:04:08.070 --> 00:04:10.320
+Robert Barr: and and what's going on in there?
+
+31
+00:04:11.470 --> 00:04:23.360
+Robert Barr: Hope because it'll you know hopefully help make more sense of it. And just in case you don't have a my data, Csv file, you can download it from from canvas
+
+32
+00:04:23.620 --> 00:04:25.550
+Robert Barr: all right. So
+
+33
+00:04:25.840 --> 00:04:33.960
+Robert Barr: these packages are added to the file for us, so i'm going to load them up
+
+34
+00:04:33.960 --> 00:04:51.220
+Robert Barr: just as a you know a point of interest. You don't have to use a lot of this these packages if you don't want to. If you're a a tidy verse, Gg: plot person, they're in here for you. If not you're you're welcome to use. Base are so let me go ahead and run this.
+
+35
+00:04:53.290 --> 00:04:58.590
+Robert Barr: and we are in business here. So the other thing I want to do is
+
+36
+00:04:58.890 --> 00:05:25.700
+Robert Barr: make sure. I go to my sessions, set working directory to source, file location, and then confirm in my files pane that my directory and source, file, location are the same if they are not, because sometimes this window doesn't update it's, you know, open source code, and sometimes it works. Sometimes it doesn't. You can always click the little star gear thing for the settings
+
+37
+00:05:25.700 --> 00:05:30.010
+Robert Barr: and say, Go to working directory, and that will put you in there. Okay.
+
+38
+00:05:30.030 --> 00:05:32.860
+all right. So the the first question
+
+39
+00:05:33.800 --> 00:05:40.040
+Robert Barr: going to have you. Let's see what we're doing here for the first question.
+
+40
+00:05:41.360 --> 00:05:53.750
+Robert Barr: First question is going to have you do some plotting, and you're going to be looking at the skewness and Kurtosis using the rock chalk library.
+
+41
+00:05:53.800 --> 00:06:03.210
+Robert Barr: There's also a very important comment in here about noticing that the the rock chalk version of Kurtosis
+
+42
+00:06:03.540 --> 00:06:05.840
+Robert Barr: subtracts 3 from its value.
+
+43
+00:06:05.980 --> 00:06:20.300
+Robert Barr: So let's take a look at that. So what are we gonna do? We're gonna do a histogram and a Qq. Plot. So a couple of ways of of doing that we can. Let's do it in base are
+
+44
+00:06:24.620 --> 00:06:28.240
+Robert Barr: so. I'm going to do a histogram
+
+45
+00:06:29.200 --> 00:06:32.560
+Robert Barr: of my data.
+
+46
+00:06:32.570 --> 00:06:33.130
+Yeah.
+
+47
+00:06:34.590 --> 00:06:35.660
+Robert Barr: where you show.
+
+48
+00:06:37.640 --> 00:06:39.280
+Robert Barr: give it a title.
+
+49
+00:06:50.870 --> 00:06:55.160
+Robert Barr: Distributions from frequencies, something like that.
+
+50
+00:06:59.690 --> 00:07:00.280
+Robert Barr: Okay.
+
+51
+00:07:02.560 --> 00:07:11.720
+Robert Barr: So I've got that. Of course. You remember. I'm sure. At this point you're all pros at how to give it a color, if you want
+
+52
+00:07:12.990 --> 00:07:20.990
+Robert Barr: and you can. You know Google all the various colors just to see what's out there. Okay. So that's a histogram.
+
+53
+00:07:21.060 --> 00:07:25.260
+And then, if I want to do a. Qq. Plot
+
+54
+00:07:25.720 --> 00:07:31.010
+Robert Barr: base are, I will use Qq. Norm
+
+55
+00:07:31.300 --> 00:07:33.390
+Robert Barr: and i'll specify
+
+56
+00:07:35.640 --> 00:07:37.490
+Robert Barr: the ratio data.
+
+57
+00:07:39.330 --> 00:07:43.840
+Robert Barr: Okay, and then to add the line.
+
+58
+00:07:44.650 --> 00:07:55.890
+Robert Barr: you know. So I could. you know, build the full Qq. Plot. I will use Qq line and my data
+
+59
+00:07:57.530 --> 00:08:02.960
+Robert Barr: There you show. and I have to highlight both of these
+
+60
+00:08:03.410 --> 00:08:07.770
+Robert Barr: and run them. And now I can get a good Qq. Plot. Normal Keyq plot.
+
+61
+00:08:07.830 --> 00:08:17.500
+Robert Barr: Okay. that will be up to you to interpret how to do that. You know what that means, as far as you know, is the data normally distributed or not it.
+
+62
+00:08:20.090 --> 00:08:29.400
+Robert Barr: Okay. So the let's go ahead and kind of format this a little nicer. So first i'm going to use
+
+63
+00:08:30.330 --> 00:08:37.110
+Robert Barr: the parameter function par and give it the M. F.
+
+64
+00:08:38.850 --> 00:08:40.789
+Robert Barr: Pro attribute
+
+65
+00:08:44.360 --> 00:08:49.990
+Robert Barr: and let's run that, and that's going to create for me a one by 2,
+
+66
+00:08:50.500 --> 00:08:54.910
+Robert Barr: right, so I could put these side by side.
+
+67
+00:08:54.930 --> 00:09:01.480
+Robert Barr: so I got them nicely side by side here. And then, as again, as I always suggest
+
+68
+00:09:02.460 --> 00:09:06.400
+Robert Barr: when you're done doing that reset
+
+69
+00:09:07.670 --> 00:09:09.950
+Robert Barr: the graph extension to be
+
+70
+00:09:11.660 --> 00:09:19.030
+Robert Barr: one by one for the next Graphic. Otherwise, once this is turned on it doesn't come off. Okay.
+
+71
+00:09:19.260 --> 00:09:26.340
+The other thing I want to show you is I want to like play around with a couple of different
+
+72
+00:09:26.540 --> 00:09:28.730
+Robert Barr: layouts here, so
+
+73
+00:09:28.750 --> 00:09:31.070
+the
+
+74
+00:09:32.230 --> 00:09:40.140
+Robert Barr: I believe the they're going to ask us for a key. some box plots.
+
+75
+00:09:40.440 --> 00:09:46.680
+Robert Barr: Let's see. Yeah. Create a box plot of the L ratio. So i'm gonna do that over here
+
+76
+00:09:47.790 --> 00:09:53.130
+Robert Barr: so we can create. Obviously, we can create box box plots.
+
+77
+00:09:54.960 --> 00:10:00.100
+Robert Barr: Let me throw this into a one by 3, just for the moment.
+
+78
+00:10:02.660 --> 00:10:07.470
+Robert Barr: So, box plot. What do they want us to do it in.
+
+79
+00:10:10.200 --> 00:10:15.390
+Robert Barr: Want us to do a I'll just make something up. I'll do. A length
+
+80
+00:10:17.850 --> 00:10:21.370
+Robert Barr: is a function of
+
+81
+00:10:24.960 --> 00:10:26.050
+Robert Barr: class
+
+82
+00:10:28.640 --> 00:10:32.060
+Robert Barr: right? So now I've got these these box plots. Okay.
+
+83
+00:10:33.320 --> 00:10:40.570
+Robert Barr: So what if I wanted to? Oh, let me me run all of this. So it's
+
+84
+00:10:42.450 --> 00:10:53.570
+Robert Barr: they're nice together. So I got the box lots. Okay, so like, what if this box plot? This, I think, should be on its own row
+
+85
+00:10:54.130 --> 00:10:59.850
+Robert Barr: and wider? Okay, so how can I do that. Well, I could
+
+86
+00:11:00.550 --> 00:11:02.610
+Robert Barr: do like a
+
+87
+00:11:04.300 --> 00:11:07.990
+Robert Barr: we can. Let's see what happens if I do a 2 by 2 here.
+
+88
+00:11:13.950 --> 00:11:31.200
+Robert Barr: Okay. So if I if I did a 2 by 2. It's looking a little bit better. But the problem is is that I've got this bling spot here because I I created a layout matrix of 2 rows by 2 columns. So because I didn't specify something in this column.
+
+89
+00:11:31.680 --> 00:11:36.790
+Robert Barr: it's blank. So the question then becomes, is it possible
+
+90
+00:11:37.020 --> 00:11:47.050
+Robert Barr: to create a layout where I can have more control of customizing. How I want things to be.
+
+91
+00:11:47.240 --> 00:11:57.070
+Robert Barr: you know, formatted and laid out on the page. The answer is, Yes, and what I want to show you now is using the layout function.
+
+92
+00:11:57.620 --> 00:12:01.510
+So we're going to redo the same thing using the layout function.
+
+93
+00:12:02.130 --> 00:12:17.200
+Robert Barr: So the layout function takes a parameter of a layout matrix, which is just a regular arm matrix. And remember, an our matrix is essentially, you know, columns by rows, right
+
+94
+00:12:17.820 --> 00:12:36.660
+Robert Barr: rose by columns. But what you can do is you can get very creative with these matrices. The and the first thing to figure out is the structure of your matrix before you even lay out your graphics and understanding matrices in our. So i'm going to create a matrix called
+
+95
+00:12:36.700 --> 00:12:39.320
+Robert Barr: M Layout.
+
+96
+00:12:39.610 --> 00:12:44.590
+Robert Barr: and I am going to assign it. The following values.
+
+97
+00:12:46.750 --> 00:12:50.380
+Robert Barr: 1, 2, 3,
+
+98
+00:12:52.160 --> 00:12:59.060
+Robert Barr: and I'm going to say that I want it in 2 Num columns equals 2.
+
+99
+00:13:03.270 --> 00:13:06.980
+Robert Barr: Okay. So let's see what happens here.
+
+100
+00:13:14.220 --> 00:13:16.160
+Robert Barr: I used argument, and
+
+101
+00:13:16.270 --> 00:13:18.300
+Robert Barr: oh, see.
+
+102
+00:13:18.450 --> 00:13:20.040
+Robert Barr: Matrix.
+
+103
+00:13:22.540 --> 00:13:26.020
+Robert Barr: Oh, sorry it's and call
+
+104
+00:13:27.460 --> 00:13:28.940
+Robert Barr: seeing in a second.
+
+105
+00:13:35.070 --> 00:13:37.840
+Robert Barr: So i'm specifying a matrix.
+
+106
+00:13:40.190 --> 00:13:42.240
+Robert Barr: 1 2 3.
+
+107
+00:13:44.420 --> 00:13:48.300
+Robert Barr: And yeah, call it goes to sorry about that.
+
+108
+00:13:48.870 --> 00:13:51.970
+Robert Barr: Alright, so let's on that.
+
+109
+00:13:52.370 --> 00:13:58.560
+Robert Barr: Okay. So this is interesting, right? Because the matrix is.
+
+110
+00:13:59.490 --> 00:14:11.400
+Robert Barr: I specified 3 values, but I wanted it to be in 2 columns. Remember what I am shooting for, what my goal is in this example. Let me just rerun. This
+
+111
+00:14:11.940 --> 00:14:16.560
+Robert Barr: is. I want 3 plots. I want 3 plots.
+
+112
+00:14:17.280 --> 00:14:34.910
+Robert Barr: but I want 3 plots arranged in 2 rows, but I want the first row to be 2 columns, just like I have it here, but I want the second row to take up the width of the the the 2 columns of the second row.
+
+113
+00:14:35.350 --> 00:14:54.470
+Robert Barr: So when I take a look at this matrix that I created because I specify 2 columns, and maybe I'm thinking, Hmm, that will. Maybe the matrix function. Will you know, create these. First, you know column, one column, 2, and then you know, row 2 column. One will be
+
+114
+00:14:54.470 --> 00:15:07.060
+Robert Barr: this third one here, because I specified columns that way. But when we take a look at what happens is it goes row.
+
+115
+00:15:07.160 --> 00:15:24.320
+Robert Barr: row, then column, because I specified columns and what's going to happen here is, we're going to give each of these positions an index number, and we're going to put a plot into that indexed position number.
+
+116
+00:15:24.320 --> 00:15:27.630
+So what if I go ahead and say an
+
+117
+00:15:27.860 --> 00:15:30.950
+Robert Barr: row, and we take a look at that. Maybe
+
+118
+00:15:32.040 --> 00:15:33.400
+Robert Barr: I can do that.
+
+119
+00:15:35.220 --> 00:15:38.780
+Robert Barr: Okay, I really don't see too much of a difference here.
+
+120
+00:15:38.860 --> 00:15:44.340
+Robert Barr: Okay. So one of the things to understand about matrices of the many things to understand about matrices
+
+121
+00:15:44.390 --> 00:15:45.700
+is that
+
+122
+00:15:46.140 --> 00:15:54.800
+Robert Barr: the default behavior for a matrix is to go column by column
+
+123
+00:15:54.940 --> 00:16:05.880
+Robert Barr: instead of row by row. But sometimes you want to build, row by row. So the parameter that we're going to use to change. That is the by row parameter.
+
+124
+00:16:06.590 --> 00:16:10.230
+Robert Barr: and I'm going to specify it to be true.
+
+125
+00:16:10.690 --> 00:16:17.980
+Robert Barr: So when I run that now I still getting that error. I'm not worried about that just yet. Let me see if I can.
+
+126
+00:16:18.760 --> 00:16:23.240
+Robert Barr: and it get rid of this for right now.
+
+127
+00:16:28.850 --> 00:16:44.420
+Robert Barr: Okay. So when I run that it is going to build it in the order, row by row. So this is row, one row, 2 row, 3 Instead of putting up.
+
+128
+00:16:45.080 --> 00:16:55.260
+Robert Barr: Let's see, i'm trying. I'm trying. I'm trying to force a point here, but our our is fighting me on it. Which and it makes sense that it is
+
+129
+00:16:55.460 --> 00:17:08.240
+Robert Barr: because i'm not giving it the right number of values. So let's let me, just for the sake of this demonstration, I'll give it the right number of values. Just so you can see how it works out. See, this is what I'm shooting for. Right?
+
+130
+00:17:08.930 --> 00:17:16.950
+Robert Barr: I want it by row. I'm going to get rid of this. so you could see it one more time.
+
+131
+00:17:21.150 --> 00:17:26.240
+Robert Barr: so by default it. But it goes row, row.
+
+132
+00:17:26.260 --> 00:17:34.680
+Robert Barr: then the next row column. One comes, so it builds columns first, and then it goes to the next one, so I specify
+
+133
+00:17:37.030 --> 00:17:38.710
+Robert Barr: by row
+
+134
+00:17:39.730 --> 00:17:41.830
+Robert Barr: equals true.
+
+135
+00:17:44.890 --> 00:17:52.680
+Robert Barr: and i'm getting i'm getting closer to what I want, because I want, and where this number one is, I want to put
+
+136
+00:17:53.040 --> 00:18:05.230
+Robert Barr: my histogram where this number 2 is. I want to put my Qq. Plot, but where this number 3 and 4 is, I want my big wide box plot.
+
+137
+00:18:06.170 --> 00:18:13.170
+Robert Barr: So the first thing i'm going to do, or is i'm going to make this 4, a 3.
+
+138
+00:18:16.470 --> 00:18:28.220
+Robert Barr: Okay. So now i'm getting closer. So row one column. One is going to be the histogram row, one column, 2, the but the Qq. Plot
+
+139
+00:18:28.350 --> 00:18:29.990
+and row 2
+
+140
+00:18:31.740 --> 00:18:36.840
+Robert Barr: image or graphics of you know, Plot 3
+
+141
+00:18:37.010 --> 00:18:40.020
+Robert Barr: is going to be the wide
+
+142
+00:18:40.090 --> 00:18:47.840
+Robert Barr: box plot. Okay. So I have the layout the way I want it. This is what I want.
+
+143
+00:18:48.860 --> 00:18:51.880
+Robert Barr: so I use the layout function.
+
+144
+00:18:53.140 --> 00:18:59.120
+Robert Barr: and I specify. I passed to it the argument of my
+
+145
+00:18:59.630 --> 00:19:05.780
+Robert Barr: matrix, and just to kind of just do a quick and dirty little demo here
+
+146
+00:19:06.120 --> 00:19:07.350
+Robert Barr: I can.
+
+147
+00:19:09.110 --> 00:19:11.010
+Robert Barr: This is Plot one.
+
+148
+00:19:15.730 --> 00:19:18.470
+Robert Barr: this is Plot 2,
+
+149
+00:19:22.620 --> 00:19:24.530
+Robert Barr: and this is
+
+150
+00:19:26.330 --> 00:19:29.090
+Robert Barr: plot 3.
+
+151
+00:19:34.380 --> 00:19:36.630
+Robert Barr: So now what I have
+
+152
+00:19:37.670 --> 00:19:40.290
+Robert Barr: is this more customized
+
+153
+00:19:42.010 --> 00:19:43.160
+Robert Barr: version?
+
+154
+00:19:43.810 --> 00:19:49.380
+Robert Barr: So I've got plot one. And now I've got plot 3 distributed
+
+155
+00:19:49.550 --> 00:19:51.200
+Robert Barr: between
+
+156
+00:19:53.120 --> 00:19:59.240
+Robert Barr: column, one column, 2. So now what I can do is I can grab
+
+157
+00:20:02.970 --> 00:20:07.950
+Robert Barr: my earlier code. paste it into there.
+
+158
+00:20:09.190 --> 00:20:10.850
+Robert Barr: run this.
+
+159
+00:20:12.760 --> 00:20:16.520
+Robert Barr: and now I have my box plots
+
+160
+00:20:16.890 --> 00:20:31.290
+Robert Barr: all nice and wide. and I like that. and I hope you do, too. So that is what is going on with like question one in question 2.
+
+161
+00:20:31.700 --> 00:20:42.210
+Robert Barr: Oh, the there's another main point I want to make about this is that they're having. You use the kurtosis and skewness functions
+
+162
+00:20:42.320 --> 00:20:45.060
+so, and there's a note in there that says.
+
+163
+00:20:45.670 --> 00:20:54.390
+Robert Barr: Be aware, or it says, calculate skewness and kurtosis using rock chalk. Now we've loaded
+
+164
+00:20:54.660 --> 00:21:04.540
+Robert Barr: the Rock Chalk library. By the way, if you need to install that library, the command to do that
+
+165
+00:21:04.550 --> 00:21:08.020
+Robert Barr: is install packages.
+
+166
+00:21:10.630 --> 00:21:11.640
+Robert Barr: rock
+
+167
+00:21:12.840 --> 00:21:15.130
+Robert Barr: shock. Okay.
+
+168
+00:21:15.190 --> 00:21:25.030
+Robert Barr: And you do not want to have the install packages part of your Rmd file. Never submit those. Okay.
+
+169
+00:21:25.100 --> 00:21:28.180
+So you might need to install that. All right. So
+
+170
+00:21:28.280 --> 00:21:41.850
+Robert Barr: how can you in our be sure to, you know, force a a function call by specific package Also, how and are are you able to know
+
+171
+00:21:41.870 --> 00:22:00.950
+Robert Barr: which function is which package is being used for that function? Because. as the note says here, which is true. The moments package and the rock chalk package. Both have these kurtosis and Skewonis functions. So
+
+172
+00:22:00.960 --> 00:22:10.360
+Robert Barr: one thing you can do is so in R. As you know, if I start typing skewness and I hit Tab, it's going to auto finish for me.
+
+173
+00:22:10.630 --> 00:22:19.440
+Robert Barr: So the question is, how do I know if this is the moment's skewness or the rock chalk skewness. Well, there is a cool
+
+174
+00:22:19.690 --> 00:22:23.290
+Robert Barr: command and are called Environment.
+
+175
+00:22:23.940 --> 00:22:25.150
+Robert Barr: Name
+
+176
+00:22:26.290 --> 00:22:27.920
+Robert Barr: Oops. Sorry.
+
+177
+00:22:28.000 --> 00:22:32.990
+Robert Barr: Hit. Enter too early environment name, and in it
+
+178
+00:22:33.040 --> 00:22:37.090
+Robert Barr: you can pass the environment function
+
+179
+00:22:37.250 --> 00:22:43.580
+Robert Barr: in that environment function. You can put in the name of a function. So i'm going to put skewness.
+
+180
+00:22:44.910 --> 00:22:49.980
+Robert Barr: and it's gonna come back and tell me that if I just call skewness
+
+181
+00:22:50.110 --> 00:22:52.950
+it will come from the rock chalk package.
+
+182
+00:22:52.990 --> 00:22:54.910
+Robert Barr: I could do the same thing
+
+183
+00:22:58.010 --> 00:22:59.940
+Robert Barr: for Kurtosis.
+
+184
+00:23:02.970 --> 00:23:22.550
+Robert Barr: It will assure me that it's coming from the rock chalk package syntactically in our you can use like a fully qualified function name kind of like a you know, a domain name sort of syntax where you do the library. So here it would be rock chalk.
+
+185
+00:23:22.690 --> 00:23:40.700
+Robert Barr: you and it. You could see our studios helping me along here and double Colon, and then I I can say skewness. and it will assure me, and I can see it. You know, lexical, you know, in the lexicon here that I am
+
+186
+00:23:41.260 --> 00:23:49.580
+Robert Barr: using the right function. So that might be just. An you know something you might want to do.
+
+187
+00:23:50.510 --> 00:23:57.030
+Robert Barr: Your project is to just make sure you're using the fully qualified function name.
+
+188
+00:23:58.100 --> 00:24:02.980
+Robert Barr: and then we can take a look and see what we get for skewness and
+
+189
+00:24:03.930 --> 00:24:07.900
+Robert Barr: for Kurtosis. and I will let you
+
+190
+00:24:08.180 --> 00:24:21.660
+Robert Barr: render the meaning of those numbers. Alright so now we're going to create a data transformation of the ratio by taking the the log base. 10 the natural, you know the log of it.
+
+191
+00:24:21.780 --> 00:24:32.850
+Robert Barr: and we're going to essentially do the same thing, but using L ratio, the log of the ratio. So I will go ahead and copy this
+
+192
+00:24:41.720 --> 00:24:50.690
+Robert Barr: a Make sure you run this line of code to generate that. by the way, in the data frame.
+
+193
+00:24:50.750 --> 00:25:10.250
+Robert Barr: You'll notice that originally. So i'm going to scroll up here when I originally loaded the data frame, and I did a structure on it. There is no L ratio. So how is that? Added it's added dynamically. By simply using the dollar sign operator, the accessor.
+
+194
+00:25:10.250 --> 00:25:27.200
+Robert Barr: the access operator. And you can literally just put the name of your new field a new variable there, and it it will go in if I come up into the our environment, tab and expand my data. Since I've run this.
+
+195
+00:25:28.100 --> 00:25:34.750
+Robert Barr: I can see it in there now when I originally loaded it. Now i'll go ahead and just reload it quickly.
+
+196
+00:25:37.150 --> 00:25:40.090
+Robert Barr: and you can keep your eye over here. You'll see it disappear.
+
+197
+00:25:41.890 --> 00:25:45.070
+Robert Barr: So I reloaded it. L ratio is gone.
+
+198
+00:25:45.140 --> 00:25:56.840
+Robert Barr: but I can add to a data frame, you know, a new of a new variable or a column. So you know, pretty dynamically like that. All right. So. And
+
+199
+00:25:57.120 --> 00:26:05.800
+Robert Barr: let's see. Did I run that I ran it, and there it is again. Good! And let me just re-grab all this stuff.
+
+200
+00:26:07.930 --> 00:26:17.100
+Robert Barr: plop it down here, and then just make sure to change everything to l ratio. So i'm doing a quick copy and paste.
+
+201
+00:26:17.580 --> 00:26:19.810
+Robert Barr: It's only in a few places.
+
+202
+00:26:21.730 --> 00:26:27.530
+Robert Barr: and then you can compare and contrast. You know
+
+203
+00:26:27.740 --> 00:26:33.720
+Robert Barr: the raw ratio data with the transformed ratio data.
+
+204
+00:26:34.210 --> 00:26:34.910
+Robert Barr: Okay.
+
+205
+00:26:37.010 --> 00:26:45.760
+Robert Barr: you can see if there's any kind of a difference there are. There. Is there an essay question there for that. No.
+
+206
+00:26:47.820 --> 00:26:49.090
+all right.
+
+207
+00:26:49.320 --> 00:26:54.070
+Robert Barr: All right. Now we're going to check some variants.
+
+208
+00:26:56.620 --> 00:26:58.690
+We're going to use the bartlets test.
+
+209
+00:26:58.970 --> 00:27:04.210
+Robert Barr: So we're going to look at. You know the the
+
+210
+00:27:06.050 --> 00:27:15.950
+Robert Barr: you know whether or not these, you know, have different variances. So the idea here is, we're going to compare multiple variances.
+
+211
+00:27:16.040 --> 00:27:27.870
+Robert Barr: and it's. It's kind of like a little bit of a hypothesis test where our null value, or our rather our null hypothesis, is that the population variances are equal and the
+
+212
+00:27:28.800 --> 00:27:42.240
+Robert Barr: alternative hypothesis is that they're differently different. And you're going to look at your p-values. and you're going to make some decisions here. So let's take a look at an example of using the bartlets.
+
+213
+00:27:43.100 --> 00:28:04.050
+Robert Barr: They essentially give you the the code here, they say, use the Bartlett test to test the variance across the classes. So you created that L ratio. And now you're going to use the Bartlets test here. And this is, you know, like this is an example of using a
+
+214
+00:28:04.090 --> 00:28:13.810
+Robert Barr: a bart. Let's test with one independent variable. So let me get that in here. So Bartlets test, and we're doing it by
+
+215
+00:28:14.230 --> 00:28:15.800
+Robert Barr: my data.
+
+216
+00:28:17.470 --> 00:28:22.490
+Robert Barr: Oh, ratio 2, it says, classes
+
+217
+00:28:24.860 --> 00:28:26.560
+a dollar sign
+
+218
+00:28:27.610 --> 00:28:28.560
+Robert Barr: classes.
+
+219
+00:28:30.830 --> 00:28:32.690
+Robert Barr: Can. We can see we have
+
+220
+00:28:33.700 --> 00:28:39.740
+Robert Barr: a p-value of point 5 2 6,
+
+221
+00:28:39.820 --> 00:28:55.300
+Robert Barr: and you know we are comparing it to a p-value of 0 point 0 5, and we want to see if it's You know less than or you know how close it is to 0 point 0 5, and see if whether or not we're going to
+
+222
+00:28:55.340 --> 00:29:02.430
+Robert Barr: fail to reject or go with the You know the alternative or the null hypothesis.
+
+223
+00:29:03.640 --> 00:29:12.460
+Robert Barr: One thing here, you know, I just want to reiterate what's going on here syntactically. This is a formula in R.
+
+224
+00:29:12.590 --> 00:29:22.660
+Robert Barr: Our, You know most of these functions in our the modeling functions like Lm. Your analysis of variance and stuff take a formula.
+
+225
+00:29:22.690 --> 00:29:35.210
+Robert Barr: and the the formula is essentially in the format of if you can think of, you know, like a formula of of, you know, like an algebraic formula, F. Of X equals.
+
+226
+00:29:36.610 --> 00:29:43.290
+Robert Barr: Well, let's let me kind of step. So let's say, y equals M. X plus.
+
+227
+00:29:44.500 --> 00:29:48.130
+Robert Barr: Let's. Let's do x x plus z.
+
+228
+00:29:48.340 --> 00:29:52.060
+Robert Barr: Then I would just substitute that to be
+
+229
+00:29:52.580 --> 00:29:54.100
+Robert Barr: F of x
+
+230
+00:29:55.730 --> 00:30:03.070
+Robert Barr: equals X plus Z. So in our how can you create a formula?
+
+231
+00:30:03.290 --> 00:30:06.840
+Robert Barr: You would use the tilde function, and you have your
+
+232
+00:30:09.430 --> 00:30:23.050
+Robert Barr: your your independent, your your dependent variable is a function of of the independent variables. Right? So your dependent variable would be something like.
+
+233
+00:30:24.420 --> 00:30:30.970
+Robert Barr: you know why, as a function, this would be written as y is a function of
+
+234
+00:30:31.260 --> 00:30:35.640
+Robert Barr: x plus z. So here
+
+235
+00:30:36.060 --> 00:30:39.940
+Robert Barr: we wanted essentially to have a function of
+
+236
+00:30:40.070 --> 00:30:46.990
+Robert Barr: log of my ratio to class. So I used that
+
+237
+00:30:48.990 --> 00:30:50.110
+Robert Barr: function
+
+238
+00:30:50.260 --> 00:30:55.730
+Robert Barr: syntax, which is very, very handy, very, very handy function syntax.
+
+239
+00:30:56.920 --> 00:31:01.980
+Robert Barr: All right. So then you come to your first essay question.
+
+240
+00:31:02.360 --> 00:31:05.480
+and it says, based on. You know these steps.
+
+241
+00:31:05.580 --> 00:31:21.430
+Robert Barr: which variable ratio, which variable the racial barrier variable, or the log rhythmic ratio, has better conformance to the normal distribution with homogeneous variances and Y, and you will use
+
+242
+00:31:21.430 --> 00:31:28.110
+Robert Barr: the previous steps to answer a question again. It's called an essay question. A few sentences of work, you know.
+
+243
+00:31:29.540 --> 00:31:34.720
+Robert Barr: Just make sure you explain yourself very well, you know, and
+
+244
+00:31:35.330 --> 00:31:37.260
+Robert Barr: however you need to do that. But
+
+245
+00:31:38.350 --> 00:31:40.910
+Robert Barr: I just you know it's not like a
+
+246
+00:31:42.340 --> 00:31:47.500
+Robert Barr: you know 5 paragraphs that you can. You can answer this question and a handful of sentences is the point.
+
+247
+00:31:48.000 --> 00:31:54.970
+Robert Barr: Okay, so Section 2 is analysis, some variance using the Aov function
+
+248
+00:31:56.680 --> 00:32:08.860
+Robert Barr: again. It's the idea of getting comfortable with that function syntax and r. So let's see, she says.
+
+249
+00:32:09.000 --> 00:32:19.310
+Robert Barr: perform an analysis of variance with the ov function on ratio l ratio, using class and sex. So we're going to have
+
+250
+00:32:19.610 --> 00:32:21.480
+Robert Barr: 2
+
+251
+00:32:21.630 --> 00:32:24.990
+Robert Barr: independent variables. Okay. 2 independent variables
+
+252
+00:32:25.190 --> 00:32:32.190
+Robert Barr: perform to first fit the model with the term class sex. So here she's actually
+
+253
+00:32:32.270 --> 00:32:38.850
+Robert Barr: kind of giving us the term and then fit the model without class in sex.
+
+254
+00:32:38.870 --> 00:32:45.210
+Robert Barr: Okay. So there is some handy dandy formula
+
+255
+00:32:45.510 --> 00:32:50.600
+Robert Barr: syntax here that we can take a look at. So we have model one.
+
+256
+00:32:51.950 --> 00:32:58.020
+Robert Barr: and we're going to use the Alphe function and we're doing it as my data
+
+257
+00:33:00.180 --> 00:33:11.900
+Robert Barr: Oh, ratio as a function of class. And i'm going to use the asterisk key. Okay.
+
+258
+00:33:12.270 --> 00:33:19.080
+Robert Barr: sex. Okay, because it's set or the asterisk symbol, because it says
+
+259
+00:33:20.010 --> 00:33:30.670
+Robert Barr: or does it say fit the model with the interaction term? So that's an interaction term. So the if we're going to use an interaction term.
+
+260
+00:33:31.740 --> 00:33:34.100
+Robert Barr: That is the asterisk. Let me
+
+261
+00:33:34.690 --> 00:33:37.970
+Robert Barr: so pull up the help.
+
+262
+00:33:39.510 --> 00:33:41.030
+Let me see if I can
+
+263
+00:33:42.960 --> 00:33:44.540
+Robert Barr: get this.
+
+264
+00:33:50.460 --> 00:33:52.180
+Robert Barr: So here
+
+265
+00:33:53.640 --> 00:33:56.090
+Robert Barr: in the help on formula
+
+266
+00:33:56.830 --> 00:34:03.180
+Robert Barr: you might want. If you know, if if you need to Google some articles on this, there there are very good articles out there on this.
+
+267
+00:34:05.620 --> 00:34:23.230
+Robert Barr: So this this goes into the formula, syntax and formula function, and then it goes into some operators that you can use. There is the asterisk operator. There's the carrot. There is the minus operator, which is an interesting one. I think
+
+268
+00:34:23.230 --> 00:34:30.460
+Robert Barr: maybe there was a question using the operator on the assignment, which essentially
+
+269
+00:34:31.380 --> 00:34:35.320
+Robert Barr: is what you can use to to put a line through the origin.
+
+270
+00:34:35.370 --> 00:34:43.719
+Robert Barr: So here we're going to use the factor crossing, which is an asterisk. Okay? So
+
+271
+00:34:44.820 --> 00:34:47.290
+Robert Barr: i'm specifying model one there.
+
+272
+00:34:47.820 --> 00:34:53.010
+Robert Barr: and then I can throw that into the summary function.
+
+273
+00:34:54.310 --> 00:34:55.389
+Robert Barr: Oops.
+
+274
+00:35:04.200 --> 00:35:06.340
+Robert Barr: Let's see. Did I not?
+
+275
+00:35:09.430 --> 00:35:11.970
+Robert Barr: Oh. my!
+
+276
+00:35:13.760 --> 00:35:15.130
+Robert Barr: My data!
+
+277
+00:35:16.800 --> 00:35:20.090
+Robert Barr: Some reason Tonight I feel like qualifying everything
+
+278
+00:35:21.340 --> 00:35:22.270
+my data.
+
+279
+00:35:24.130 --> 00:35:24.900
+Robert Barr: There we go.
+
+280
+00:35:28.690 --> 00:35:31.150
+Robert Barr: Okay, and you get a nice summary.
+
+281
+00:35:31.210 --> 00:35:43.180
+Robert Barr: You can. You have your F. Value, your P values. your errors, your significance. and you will go ahead and do that with
+
+282
+00:35:43.510 --> 00:35:49.970
+Robert Barr: l ratio with the interaction, and then you'll fit it without the interaction.
+
+283
+00:35:51.820 --> 00:35:54.090
+Robert Barr: and that would look something like
+
+284
+00:35:55.240 --> 00:35:57.160
+Robert Barr: model 2.
+
+285
+00:35:58.660 --> 00:36:11.000
+Robert Barr: I'm going to. I'm going to do a different syntax here. So here I was specific qualifying my variables by specifying the data frame name. So here, what i'm going to do is i'm going to specify the
+
+286
+00:36:11.890 --> 00:36:16.320
+Robert Barr: variable names so ratio as a function of
+
+287
+00:36:18.250 --> 00:36:20.440
+Robert Barr: class plus
+
+288
+00:36:21.020 --> 00:36:33.790
+Robert Barr: sex. And then I am going to. This was supposed to be. Yeah. And now I'm going to use the data parameter and specify my
+
+289
+00:36:34.000 --> 00:36:34.980
+Robert Barr: my data.
+
+290
+00:36:42.780 --> 00:36:43.370
+Robert Barr: Okay.
+
+291
+00:36:45.450 --> 00:36:50.950
+Robert Barr: so you can. You will do these analysis of variances, and you'll take a look at
+
+292
+00:36:51.220 --> 00:37:02.020
+Robert Barr: the significance terms and see what you think is better. The relationship between L. Ratio as and the factor of class insects, or.
+
+293
+00:37:02.860 --> 00:37:06.060
+Robert Barr: you know, is it better with the interaction or not?
+
+294
+00:37:06.800 --> 00:37:13.090
+Robert Barr: All right. So for part B for the model without class and sex.
+
+295
+00:37:15.040 --> 00:37:20.190
+Robert Barr: she wants you to use the turkey Hsd function to interpret the results.
+
+296
+00:37:20.220 --> 00:37:23.650
+Robert Barr: and a 95% confidence interval.
+
+297
+00:37:24.030 --> 00:37:29.920
+Robert Barr: So they give you the function. So you just pass your model right into it. So 2 key
+
+298
+00:37:31.250 --> 00:37:33.110
+Robert Barr: model 2,
+
+299
+00:37:35.040 --> 00:37:40.060
+Robert Barr: and we get some results. Here are our classes.
+
+300
+00:37:41.120 --> 00:37:54.070
+Robert Barr: You can see it's by class. and you could see the formula being used here. Okay. So you get your lowered upper bounds
+
+301
+00:37:55.960 --> 00:38:02.930
+Robert Barr: and your adjusted values. and you will be able to interpret that for your assignment.
+
+302
+00:38:04.750 --> 00:38:09.120
+Robert Barr: Okay. So here this is a pretty cool trick. I like this one
+
+303
+00:38:09.300 --> 00:38:11.370
+in Part 3.
+
+304
+00:38:12.140 --> 00:38:22.480
+Robert Barr: They're going to have you combine male and female, and call on and to call it an adult, and the code was provided for you.
+
+305
+00:38:22.500 --> 00:38:29.510
+Robert Barr: So what they're doing here is they're essentially using, an if else, so, let's take a look at the syntax
+
+306
+00:38:30.480 --> 00:38:32.350
+Robert Barr: of, if else
+
+307
+00:38:34.320 --> 00:38:35.790
+Robert Barr: it's pretty cool
+
+308
+00:38:36.890 --> 00:38:38.390
+Robert Barr: decision making
+
+309
+00:38:39.650 --> 00:38:42.520
+Robert Barr: function. It takes 3 parameters.
+
+310
+00:38:43.270 --> 00:38:47.440
+Robert Barr: some kind of conditional test which evaluates to true or false.
+
+311
+00:38:47.760 --> 00:38:56.040
+Robert Barr: then what to do when it's true, and then what to do when it's false. So just you know a very simple.
+
+312
+00:38:56.490 --> 00:39:04.300
+Robert Barr: You know a very simple. Demo would be something like my favorite.
+
+313
+00:39:06.610 --> 00:39:11.520
+Robert Barr: My favorite color equals blue.
+
+314
+00:39:17.330 --> 00:39:26.100
+Robert Barr: Okay. So I got my favorite color equals blue. and I always like to jump up into the environment and check that. It's there, and I can say.
+
+315
+00:39:30.130 --> 00:39:39.590
+Robert Barr: if else. my favorite color. Notice the 2 equal signs blue, then
+
+316
+00:39:40.310 --> 00:39:42.840
+Robert Barr: you like blue.
+
+317
+00:39:49.650 --> 00:39:51.540
+Robert Barr: It's not blue
+
+318
+00:39:52.190 --> 00:39:54.210
+just making something up here, so
+
+319
+00:39:54.270 --> 00:39:58.570
+Robert Barr: I should say you like blue. but it's working.
+
+320
+00:40:04.470 --> 00:40:06.750
+Robert Barr: So I created a
+
+321
+00:40:08.180 --> 00:40:18.970
+Robert Barr: variable called my favorite color. I signed at the value of blue, and then I do a test here, hey? Does it, in fact, equal blue? Yet you like blue? No, it's not blue. If I
+
+322
+00:40:20.660 --> 00:40:23.560
+Robert Barr: does it equal red.
+
+323
+00:40:28.210 --> 00:40:39.160
+Robert Barr: it's not blue. So if else is a test. then what to do? If that test is true, what to do? If that test is false. very handy. So this is pretty cool.
+
+324
+00:40:39.250 --> 00:40:52.200
+Robert Barr: because what they're doing is yeah, all on one line right? What they're evaluating. whether or not. My sex is equal to I.
+
+325
+00:40:52.230 --> 00:41:00.250
+Robert Barr: If it equals I then you're going to keep it as a and I as infant. Remember. Okay.
+
+326
+00:41:00.290 --> 00:41:07.360
+Robert Barr: that would you would read that in the in that background. Pdf: so I is infant if it's not equal to I
+
+327
+00:41:07.700 --> 00:41:14.880
+Robert Barr: it's an adult which would be male or female. So they're combining male and female into an adult.
+
+328
+00:41:15.580 --> 00:41:19.180
+Robert Barr: and they're keeping infants independent.
+
+329
+00:41:20.350 --> 00:41:30.050
+Robert Barr: And then what they're doing is they're converting that result to a factor which is a data type in
+
+330
+00:41:33.250 --> 00:41:40.700
+Robert Barr: right, like class is a factor, right? We can see that, you know a one, a 2. Those are factors.
+
+331
+00:41:40.740 --> 00:41:43.300
+Robert Barr: kind of like categorical data. Okay?
+
+332
+00:41:43.630 --> 00:42:01.940
+Robert Barr: And again, they're using that dollar sign operator to dynamically create a new variable called type. So this is all happening in one line. Okay, this is all happening in one line. They're evaluating whether or not
+
+333
+00:42:01.960 --> 00:42:15.460
+Robert Barr: the sex is infant. If it's infant, keep it to an infant, if it's male, or if it's not, which is the right way to think of. If it's not an infant, then make it an adult
+
+334
+00:42:15.770 --> 00:42:27.530
+Robert Barr: created as a factor stored in a new variable called type. So. taking a look here, we can see my data does not have a variable called type yet.
+
+335
+00:42:27.560 --> 00:42:32.590
+Robert Barr: but once I run, this line type jumps in there, and it's a factor of 2.
+
+336
+00:42:33.220 --> 00:42:37.980
+Robert Barr: Okay, it's a factor of 2, and then we're going to put it into a table
+
+337
+00:42:40.060 --> 00:42:42.120
+Robert Barr: and get the counts.
+
+338
+00:42:43.160 --> 00:42:47.630
+Robert Barr: There are 707 adults, and 329
+
+339
+00:42:47.670 --> 00:42:49.530
+Robert Barr: infants.
+
+340
+00:42:49.610 --> 00:42:51.820
+Robert Barr: It's a very cool little trick. I like that.
+
+341
+00:42:52.180 --> 00:42:53.440
+Robert Barr: all right.
+
+342
+00:42:57.290 --> 00:43:10.980
+Robert Barr: so let's see. So here we'll combine it. Okay. So Yep. All you need to do is execute the code. So we got that all right. We're sent to side by side histogram of the volume. So once you display infant and one should display
+
+343
+00:43:12.650 --> 00:43:18.480
+Robert Barr: the adults all right. So again a couple of ways of doing that
+
+344
+00:43:18.490 --> 00:43:26.380
+Robert Barr: here i'm going to just give you an example, using Gg. Plot just in case there are some tidy verse fans out there if you want to see it.
+
+345
+00:43:29.930 --> 00:43:31.850
+Robert Barr: So I've got
+
+346
+00:43:33.220 --> 00:43:38.520
+Robert Barr: Gg: plot. Just makes things look a little bit different, I guess.
+
+347
+00:43:39.210 --> 00:43:40.720
+Robert Barr: Here I am adult
+
+348
+00:43:40.910 --> 00:43:43.950
+Robert Barr: Here I have the infant.
+
+349
+00:43:44.880 --> 00:43:52.480
+Robert Barr: This is using what's called the Grammar of Graphics. So Gg: Plot takes
+
+350
+00:43:52.520 --> 00:44:02.190
+Robert Barr: several parameters, and there's there's different, you know, when I use Gg: plot, i'm a big fan of kind of
+
+351
+00:44:02.500 --> 00:44:06.330
+Robert Barr: using a lot of white space because
+
+352
+00:44:08.000 --> 00:44:09.120
+Robert Barr: it's
+
+353
+00:44:11.130 --> 00:44:14.460
+Robert Barr: helps me to understand what. In fact, i'm doing
+
+354
+00:44:15.520 --> 00:44:17.050
+Robert Barr: so. Gg: Plot
+
+355
+00:44:18.540 --> 00:44:20.200
+Robert Barr: syntactically.
+
+356
+00:44:20.320 --> 00:44:35.630
+Robert Barr: You're you're building these graphics, Layer by layer by layer, you're You're essentially doing that in base R 2, I mean. The the reality is that base Gigi plot is built on base. R:
+
+357
+00:44:35.800 --> 00:44:36.910
+So
+
+358
+00:44:37.670 --> 00:44:41.220
+Robert Barr: Gg: plot is the generic function. You specify
+
+359
+00:44:42.510 --> 00:44:54.510
+Robert Barr: the data, Set the data frame here, and then you specify the aesthetic. And here we're going to be using volume. So that's essentially what we're plotting.
+
+360
+00:44:54.580 --> 00:45:02.900
+Robert Barr: Then there's this. Then you start appending these additional options. Okay, you start appending these additional options
+
+361
+00:45:03.900 --> 00:45:11.870
+Robert Barr: and you do that using the plus sign. So the first thing is you're saying, Look from this data set. I want
+
+362
+00:45:12.560 --> 00:45:23.900
+Robert Barr: to plot volume. Okay, and then notice the the, the the parentheses are closed. That is all. Essentially in the first Gigi plot
+
+363
+00:45:24.000 --> 00:45:36.160
+Robert Barr: function call. But then you're going to say you use the plus sign to essentially append another command another function column. And you're essentially saying, I want to put that into a histogram.
+
+364
+00:45:36.700 --> 00:45:40.220
+Robert Barr: I want to put that into a histogram. and then i'm going to
+
+365
+00:45:40.570 --> 00:45:43.450
+Robert Barr: specify type
+
+366
+00:45:43.670 --> 00:45:49.830
+Robert Barr: what they call the facet, which is the you know that's why it's saying adults here and
+
+367
+00:45:50.300 --> 00:45:52.150
+Robert Barr: infant here okay.
+
+368
+00:45:54.480 --> 00:46:05.370
+Robert Barr: again. You could use base R: I've gone through using histograms and basar a lot, so you can do the same thing. The other thing that kind of happened with this facet grid
+
+369
+00:46:05.430 --> 00:46:15.450
+Robert Barr: automatically. Is it? This facet grid was able to look at type and figure out, hey, there's only 2.
+
+370
+00:46:15.590 --> 00:46:28.070
+Robert Barr: It's. It's a it's a a factor of 2, I an adult, and it put them side by side automatically for you. I didn't have to use a layout. I didn't have to use the par parameter function.
+
+371
+00:46:28.120 --> 00:46:31.600
+So that's kind of a a nice little
+
+372
+00:46:32.500 --> 00:46:33.900
+Robert Barr: built in
+
+373
+00:46:34.210 --> 00:46:40.560
+Robert Barr: Gg. Plot feature that it will lay things out for you using that facet grid.
+
+374
+00:46:42.850 --> 00:46:45.900
+Robert Barr: Okay. So you're gonna compare the
+
+375
+00:46:46.460 --> 00:46:50.000
+Robert Barr: histograms and take a look at the distributions.
+
+376
+00:46:51.240 --> 00:46:55.630
+Robert Barr: 3 B: You're gonna take a look at some scatter plots
+
+377
+00:46:58.260 --> 00:47:22.770
+Robert Barr: and they're and you're going to take a look at their create a scatter plot of shock value versus volume and a scatter plot of their base 10 logs. So you're going to do what they did earlier, where you essentially like. They created that L ratio using the log function. So we're going to create essentially an L. Chuck
+
+378
+00:47:24.610 --> 00:47:29.480
+Robert Barr: and an L volume so pretty easy to do.
+
+379
+00:47:29.560 --> 00:47:33.330
+Robert Barr: I take my shock.
+
+380
+00:47:33.500 --> 00:47:43.180
+Robert Barr: and I throw it into the log function, and I put it into L. Chuck. you know, an L underscore shock. That's just so. You know it's the logarithmic
+
+381
+00:47:43.210 --> 00:47:45.230
+and the same thing with the volume.
+
+382
+00:47:48.440 --> 00:47:50.240
+Robert Barr: So now I've got those.
+
+383
+00:47:50.690 --> 00:47:55.770
+Robert Barr: And now you're going to create a bunch of plots
+
+384
+00:47:56.730 --> 00:48:00.420
+Robert Barr: so like, for example, one of them
+
+385
+00:48:02.440 --> 00:48:03.610
+Robert Barr: let's see the
+
+386
+00:48:04.880 --> 00:48:09.570
+Robert Barr: you can use. Here's some Gg plot code to take a look at.
+
+387
+00:48:11.030 --> 00:48:12.420
+Robert Barr: to plot that
+
+388
+00:48:13.790 --> 00:48:20.710
+Robert Barr: this is using the Gritter Range library that we put in earlier up here
+
+389
+00:48:23.090 --> 00:48:26.020
+Robert Barr: Grid extra rather, and
+
+390
+00:48:26.610 --> 00:48:32.350
+Robert Barr: what that will do is put it into a nice
+
+391
+00:48:35.640 --> 00:48:37.140
+Robert Barr: plot for us.
+
+392
+00:48:37.850 --> 00:48:45.620
+Robert Barr: Okay. So I'm: looking to generate shock, volume or a shock as a function of volume.
+
+393
+00:48:45.660 --> 00:48:49.960
+Robert Barr: the log as a function of the log of volume
+
+394
+00:48:50.050 --> 00:49:01.020
+Robert Barr: shock as a as a function of volume, and but i'm specifying it here by class. right? And then i'm specifying it here by
+
+395
+00:49:01.110 --> 00:49:06.020
+Robert Barr: adult or infant. Okay. So, taking a look at the syntax.
+
+396
+00:49:06.270 --> 00:49:09.350
+Robert Barr: I call cheesy plot, and I specify
+
+397
+00:49:11.160 --> 00:49:22.390
+Robert Barr: that I want to use my data as the data frame. That's where the data is. I say, and the aesthetic. I say, X is going to be volume and y is going to be shock.
+
+398
+00:49:22.820 --> 00:49:33.650
+Robert Barr: and essentially the color will be class. So that's why it's creating these scatter plots and coloring it by class. Because
+
+399
+00:49:33.690 --> 00:49:41.560
+Robert Barr: the Gg plot function is looking into the classes. It's seeing that the class is a factor
+
+400
+00:49:41.640 --> 00:49:54.920
+Robert Barr: with 5 levels, 5 unique values, and it is automatically assigning those values, those factor values to a individual color.
+
+401
+00:49:55.100 --> 00:49:56.190
+And
+
+402
+00:49:57.390 --> 00:49:59.090
+Robert Barr: then i'm saying.
+
+403
+00:50:00.600 --> 00:50:10.510
+Robert Barr: You know, i'm just specifying some additional information, and in terms of like, you know, the alpha how transparent or not. I want the
+
+404
+00:50:11.790 --> 00:50:17.490
+Robert Barr: you know the points. And then i'm positioning the legend at the bottom.
+
+405
+00:50:17.570 --> 00:50:23.900
+Robert Barr: and notice here what's happening is inside of this gritter range. Right? So Grid arrange is.
+
+406
+00:50:24.240 --> 00:50:36.000
+Robert Barr: you know, this is Gg plots, you know the tidy verse actually way of laying things out on a grid instead of using layout or the par function, and
+
+407
+00:50:36.100 --> 00:50:40.580
+Robert Barr: you separate each call with a comma. So
+
+408
+00:50:42.080 --> 00:50:45.250
+Robert Barr: it links all of them together.
+
+409
+00:50:45.800 --> 00:50:58.100
+Robert Barr: Okay. But the like. The final magic here is like, how does it know how to do it? Because I'm saying, hey, specify? 2 rows, specify 2 rows, so
+
+410
+00:50:58.460 --> 00:51:10.120
+Robert Barr: row one column, one row 2 column 2, and each of these calls. You gotta make sure you're watching your syntax here. Each of these calls are separated by a
+
+411
+00:51:10.160 --> 00:51:17.420
+Robert Barr: comma. So this is Pl. Row, one column, one
+
+412
+00:51:17.990 --> 00:51:27.380
+Robert Barr: row, one column, 2 comma row, 2 column, one comma, etc., and then make sure you see the final comma here.
+
+413
+00:51:27.560 --> 00:51:33.840
+Robert Barr: because that is the magic food that's saying. You know how to how to lay that out.
+
+414
+00:51:35.220 --> 00:51:48.290
+Robert Barr: Okay. So you're going to look at your plots. You're going to see. You know the kinds of information that scatter plots give us, for example, Direction.
+
+415
+00:51:48.450 --> 00:52:00.020
+Robert Barr: you know, is, you know. Is it? Linear is it positively, linear negatively. Linear You know the direction of the slope, because you're you, you know, because you're
+
+416
+00:52:00.110 --> 00:52:03.240
+Robert Barr: in. This again is just a cool feature of
+
+417
+00:52:03.960 --> 00:52:14.750
+Robert Barr: how base our and tidy verse color things is, it will take a factor data type, like class or type
+
+418
+00:52:14.750 --> 00:52:25.260
+Robert Barr: and color them for us automatically. So we can start looking for, you know, based on the colors. We can start looking for clustering, you know, like oh, hey, guess what
+
+419
+00:52:26.320 --> 00:52:30.450
+Robert Barr: it turned, you know, just by kind of looking at it.
+
+420
+00:52:31.300 --> 00:52:36.280
+Robert Barr: The the shock weight. It tends to be heavier.
+
+421
+00:52:36.430 --> 00:52:49.260
+Robert Barr: You know the volume. It tends to be more volume, as they are adults, which is, you know. I think you would expect to see something like that. And you and what's interesting here is you're able to see it
+
+422
+00:52:49.260 --> 00:52:56.550
+Robert Barr: with the transform data as well. But here you get to to really kind of see like
+
+423
+00:52:58.160 --> 00:53:05.400
+Robert Barr: by transforming it and sort of standardizing it, You get a much
+
+424
+00:53:05.420 --> 00:53:08.920
+Robert Barr: cleaner line in a much
+
+425
+00:53:09.270 --> 00:53:13.140
+Robert Barr: more observable clustering effect. Here.
+
+426
+00:53:13.230 --> 00:53:19.450
+Robert Barr: take a look at Chuck chuck volume shut by volume. I mean
+
+427
+00:53:19.870 --> 00:53:25.480
+Robert Barr: you can definitely see, you know, in this first one here
+
+428
+00:53:26.150 --> 00:53:43.390
+Robert Barr: you can definitely see, you know. Yes, there's a positive correlation. Remember, these classes are the age class of the abalone, so as as they get as the classes get higher in number from a one to a 5, the abalone get older.
+
+429
+00:53:43.390 --> 00:53:53.490
+Robert Barr: And yeah, you would expect that the older abalone, you know way more, have more volume. But you can really see it more clearly here
+
+430
+00:53:53.490 --> 00:54:10.750
+Robert Barr: when it's the the number was standardized or transformed, using the logarithmic, because that just basically takes all the values and puts them in a in a consistent it. It rescales them nicely, and that's something that's done, Just you know. That's that's frequently done.
+
+431
+00:54:11.480 --> 00:54:17.670
+Robert Barr: Okay. So you will take a look at the and compare the scatter plots and answer the questions.
+
+432
+00:54:19.880 --> 00:54:26.640
+Robert Barr: More. Code provided for you. Isn't. That nice? That's easy points. But let's understand what this code is doing.
+
+433
+00:54:27.160 --> 00:54:32.400
+Robert Barr: It says: Since Avaloni growth slows after class, a 3
+
+434
+00:54:32.900 --> 00:54:52.150
+Robert Barr: infants and class a infants or infants in classes. A 4 and a 5 are considered mature candidates for harvest. So remember that I believe in the first one we saw that there were some class, a class, a 4 and a 5 abalone that were still marked as infants.
+
+435
+00:54:52.150 --> 00:55:00.550
+you know. So there are some skewness in that data. It's not. It's not a perfect thing. So you're given some code to reclassify the infants.
+
+436
+00:55:01.430 --> 00:55:03.160
+Robert Barr: So what is this doing?
+
+437
+00:55:03.330 --> 00:55:06.740
+Robert Barr: So we're we're going to override.
+
+438
+00:55:06.790 --> 00:55:12.450
+Robert Barr: Override type. So my data dollar dollar type that
+
+439
+00:55:12.840 --> 00:55:23.060
+Robert Barr: already exists right as a factor with 2 levels adults and I for infant.
+
+440
+00:55:23.140 --> 00:55:33.130
+Robert Barr: Now, what we're going to do is we're going to look through. We're going to reclassify this, and what we're going to do is we're going to say we're going to rename it. If
+
+441
+00:55:33.220 --> 00:55:36.690
+Robert Barr: the class is a 4.
+
+442
+00:55:37.250 --> 00:55:47.260
+Robert Barr: This pipe is an or sign it is, or logic so, or an a 5. We're going to call that an adult. So now we are
+
+443
+00:55:47.280 --> 00:55:48.940
+Robert Barr: renaming
+
+444
+00:55:51.890 --> 00:56:02.810
+Robert Barr: now. We're renaming a 4 s and a 5 s and adults. just as a quick reminder earlier, what we did was, we looked at sex.
+
+445
+00:56:03.930 --> 00:56:10.280
+Robert Barr: the variable sex, the column in this data frame called sex. They just looked at
+
+446
+00:56:11.210 --> 00:56:28.320
+Robert Barr: whether it was I or not, and they called in an adult. Now what we're doing and and remember, sex is a factor with 3 levels female. I for infant, male for adult, and then they combine that into type.
+
+447
+00:56:28.320 --> 00:56:31.820
+Robert Barr: just calling it adult or
+
+448
+00:56:32.610 --> 00:56:45.870
+Robert Barr: infant. Now, what we're doing is we're digging a little bit deeper, and we're going to take a look at class, and we're going to combine the values a 4 or a 5
+
+449
+00:56:45.900 --> 00:56:49.450
+Robert Barr: into an adult. So let's take a look at that.
+
+450
+00:56:49.610 --> 00:56:55.330
+Robert Barr: And essentially we're going to rerun a lot of this, you know, rerun a lot of the the statistics.
+
+451
+00:56:55.360 --> 00:57:07.290
+Robert Barr: But now, looking at class. So now there are 747 adults versus 289 infants. What did we have before?
+
+452
+00:57:07.870 --> 00:57:13.050
+Robert Barr: We had 707 adults, and 329, so let's see.
+
+453
+00:57:13.630 --> 00:57:20.330
+Robert Barr: So here. So we gained more adults, we gain more adults
+
+454
+00:57:21.080 --> 00:57:24.840
+Robert Barr: and infants went from 3, 29,
+
+455
+00:57:26.810 --> 00:57:30.960
+Robert Barr: to 289. So we lost adults. Now that you know that is
+
+456
+00:57:30.990 --> 00:57:36.500
+Robert Barr: very obvious, but maybe not so. I want you to kind of think about like.
+
+457
+00:57:36.570 --> 00:57:42.680
+Robert Barr: you know, before you even start running the numbers here before we start doing this statistical analysis here.
+
+458
+00:57:42.710 --> 00:57:57.220
+Robert Barr: What he thinks, you know. What do you think is going to happen with the increase in adult population or adult observations versus you know the decrease in
+
+459
+00:57:57.330 --> 00:58:13.170
+Robert Barr: infant observations. This is pretty cool. Alright. So what are they gonna have us do to study this? We are going to regress El Shock as the dependent variable and volume, class and type.
+
+460
+00:58:13.180 --> 00:58:18.920
+Robert Barr: Okay. So what we're going to do, we're going to
+
+461
+00:58:19.920 --> 00:58:29.830
+Robert Barr: the dependent variable. Is our Y right. It depends on the X access independent variables. So we're going to use a function.
+
+462
+00:58:29.880 --> 00:58:37.630
+Robert Barr: and we're going to use the Lm function. So i'm going to create a model.
+
+463
+00:58:37.710 --> 00:58:41.970
+Robert Barr: I call it M. Reg. One
+
+464
+00:58:42.200 --> 00:58:46.730
+Robert Barr: and L. M. And it says, use L. Shock
+
+465
+00:58:51.850 --> 00:58:55.330
+Robert Barr: L. Shocks. And
+
+466
+00:58:56.060 --> 00:59:00.190
+what do they want us to do. Hang on! Move, yellow thing! Oh.
+
+467
+00:59:00.380 --> 00:59:08.850
+Robert Barr: they give us. They give it to us right here. That's pretty cool. So Els shock as L. Volume
+
+468
+00:59:10.700 --> 00:59:15.580
+Robert Barr: in class and type
+
+469
+00:59:16.840 --> 00:59:18.830
+Robert Barr: and data is my data
+
+470
+00:59:20.370 --> 00:59:27.260
+Robert Barr: all right, and then we're gonna. And then they tell us to apply the summary to the model. So let's take a look at that
+
+471
+00:59:33.980 --> 00:59:35.140
+French one.
+
+472
+00:59:35.720 --> 00:59:36.590
+Robert Barr: all right.
+
+473
+00:59:42.580 --> 00:59:45.500
+right? So we get our
+
+474
+00:59:45.980 --> 00:59:49.580
+Robert Barr: formula. We get our residuals.
+
+475
+00:59:50.000 --> 01:00:02.920
+Robert Barr: we get our coefficients. we get our errors, we get our t values and our p-values. we get our significance. We get our adjusted r squared.
+
+476
+01:00:03.780 --> 01:00:06.330
+Robert Barr: I'll let you think about that
+
+477
+01:00:06.650 --> 01:00:08.360
+Robert Barr: and we get a
+
+478
+01:00:10.070 --> 01:00:13.900
+Robert Barr: hugely small p-value.
+
+479
+01:00:14.130 --> 01:00:20.460
+Robert Barr: So I will let you think about that. and you're going to interpret that.
+
+480
+01:00:21.880 --> 01:00:28.900
+Robert Barr: Interpret the trend in class level. coefficient estimates.
+
+481
+01:00:30.210 --> 01:00:40.810
+Robert Barr: and she gives you a hint. It is not asking if the estimates are so statistically significant. It is asking for an interpretation of the pattern of these coefficients.
+
+482
+01:00:41.200 --> 01:00:47.160
+Robert Barr: So we have volume
+
+483
+01:00:49.080 --> 01:00:52.540
+Robert Barr: we have what's going on with Class
+
+484
+01:00:53.380 --> 01:00:56.980
+Robert Barr: 2 3 4, and
+
+485
+01:00:57.030 --> 01:01:00.600
+Robert Barr: 5. Is there a pattern? There.
+
+486
+01:01:01.710 --> 01:01:15.880
+Robert Barr: You'll take a look and see? All right. So we have a couple of more sections. We have Section 5 here where we're going to go through a model.
+
+487
+01:01:16.430 --> 01:01:27.130
+Robert Barr: Let's see. So section 5. If model is the regression object use module, all right. So I called mine not model, but I called it what
+
+488
+01:01:27.190 --> 01:01:31.830
+Robert Barr: M. Reg. One. so we can do.
+
+489
+01:01:34.160 --> 01:01:39.560
+Robert Barr: We. We can take a look at the residuals. So so
+
+490
+01:01:39.860 --> 01:01:44.930
+Robert Barr: the Lm. Function notice that when I called Lm.
+
+491
+01:01:45.860 --> 01:01:59.630
+Robert Barr: I assigned it to a variable because it returns a linear regression object. and I can interrogate that object. So if I do, am ridge
+
+492
+01:01:59.910 --> 01:02:20.310
+Robert Barr: one and run that it's going to give me the coefficients. the intercept and the coefficients right. but I can also do M. Reg. $1. And now I got more stuff like I can see the residuals
+
+493
+01:02:22.380 --> 01:02:36.660
+Robert Barr: like all of them, and if I wanted to, I could plot that and take a look at You know the distribution of that and all these kinds of things, and that is exactly what is going to be asked of you. To do here is to essentially
+
+494
+01:02:36.720 --> 01:02:39.650
+Robert Barr: create a histogram of the residuals.
+
+495
+01:02:40.440 --> 01:02:53.490
+Robert Barr: and then take a look at that in a Qq. Plot and see, you know. How are the You know? What is the relationship there? What is the distribution like there? Again.
+
+496
+01:02:53.500 --> 01:03:03.300
+Robert Barr: it is having you assure you, to use that rock chalk for the kurtosis. Okay, so you're going to do that. You're going to plot these residuals.
+
+497
+01:03:03.910 --> 01:03:08.120
+Robert Barr: and i'll let you play with that. Of course you can email if there are any questions.
+
+498
+01:03:08.400 --> 01:03:23.920
+Robert Barr: And then same thing down here, you are going to continue plotting the residuals. but you're going to plot that with the logarithmic volume, class and type
+
+499
+01:03:24.120 --> 01:03:26.340
+Robert Barr: as the
+
+500
+01:03:26.580 --> 01:03:32.410
+Robert Barr: dependent variables. Okay, that's what's going to go on in here and 5 B.
+
+501
+01:03:33.370 --> 01:03:36.620
+Robert Barr: Then finally we come to Section 6,
+
+502
+01:03:40.680 --> 01:03:55.350
+Robert Barr: and it says a series of volumes covering a range of abalone volume will be used. They, you know. They create this for it loop for us. They go back and they reclassify
+
+503
+01:03:55.900 --> 01:04:01.140
+Robert Barr: adult there. What they're doing is they're creating a a
+
+504
+01:04:01.360 --> 01:04:07.670
+Robert Barr: index variable for infants and an index variable for adults
+
+505
+01:04:08.730 --> 01:04:09.650
+Robert Barr: here.
+
+506
+01:04:10.730 --> 01:04:15.230
+Robert Barr: So we're gonna go through a loop. So we'll talk about that.
+
+507
+01:04:18.450 --> 01:04:21.790
+Robert Barr: So you can see all these are
+
+508
+01:04:21.910 --> 01:04:25.570
+Robert Barr: the values of those are essentially whether or not
+
+509
+01:04:26.660 --> 01:04:28.830
+Robert Barr: it's true or false. So
+
+510
+01:04:32.320 --> 01:04:33.440
+Robert Barr: in the
+
+511
+01:04:34.660 --> 01:04:36.090
+Robert Barr: in the data frame.
+
+512
+01:04:36.260 --> 01:04:39.240
+Robert Barr: Okay, so let me move that up here.
+
+513
+01:04:40.130 --> 01:04:41.440
+Robert Barr: So just see.
+
+514
+01:04:43.420 --> 01:04:56.790
+Robert Barr: So let's look at the adult one. So wherever So these are index positions. and I don't know, if you remember. But there's also that whoops hang on.
+
+515
+01:04:57.640 --> 01:05:02.470
+Robert Barr: Get ready you There's also that which
+
+516
+01:05:07.640 --> 01:05:15.280
+Robert Barr: right? So this is essentially giving you the whether or not
+
+517
+01:05:15.620 --> 01:05:24.710
+Robert Barr: this index position is in a I called I. Dx. A. For adults. So whether this one is false and this will actually give you the
+
+518
+01:05:24.870 --> 01:05:25.960
+Robert Barr: the position
+
+519
+01:05:26.260 --> 01:05:28.510
+Robert Barr: in the data frame. Okay.
+
+520
+01:05:30.680 --> 01:05:42.520
+Robert Barr: all right. And then we're taking the maximum in volume. We're creating a delta of it by subtracting the 2 dividing by a 1,000. We're creating some
+
+521
+01:05:43.180 --> 01:05:47.680
+Robert Barr: proportions of infants. We're creating the proportions of adults.
+
+522
+01:05:47.770 --> 01:06:05.640
+Robert Barr: We're creating the proportion of volume values. Okay. then, total infants is going to be the sum of the infants. I. Dx. I. Variable, and the total adults is the sum of the I. Dx. A variable.
+
+523
+01:06:05.850 --> 01:06:14.950
+Robert Barr: and what they're doing is essentially going through each. Let's take a look at
+
+524
+01:06:16.060 --> 01:06:23.300
+Robert Barr: just to kind of validate something here. I'm going to say length Idx.
+
+525
+01:06:26.380 --> 01:06:33.580
+Robert Barr: Okay. So it's 1036, so there's 1036 in there. We can also see it's from one to 1036 in here.
+
+526
+01:06:35.010 --> 01:06:43.570
+But here we're going from one to 10,000, and we're going to create the value, and they're defining the value as
+
+527
+01:06:44.170 --> 01:06:55.380
+Robert Barr: the minimum plus the position in the Loop Times, the Delta storing it in value. Then they're taking value, putting it into this
+
+528
+01:06:56.640 --> 01:07:00.290
+Robert Barr: value volume value.
+
+529
+01:07:04.300 --> 01:07:05.590
+Vector
+
+530
+01:07:05.760 --> 01:07:08.440
+Robert Barr: then they're taking the sum of it.
+
+531
+01:07:09.380 --> 01:07:12.900
+Robert Barr: Okay, and creating a proportion
+
+532
+01:07:12.940 --> 01:07:16.570
+Robert Barr: and putting it into the proportion of infants. Vector
+
+533
+01:07:16.800 --> 01:07:18.930
+Robert Barr: and they're calling it. You know.
+
+534
+01:07:19.140 --> 01:07:20.640
+Robert Barr: That is the
+
+535
+01:07:21.080 --> 01:07:28.480
+Robert Barr: position in the loop, the index. Right? So. And then they're creating this proportion of adults. Okay, and they're
+
+536
+01:07:28.520 --> 01:07:31.340
+Robert Barr: putting it into prop adults.
+
+537
+01:07:31.380 --> 01:07:36.420
+Robert Barr: So this code is given for you, but it's pretty good definitely. Want to study it and understand it.
+
+538
+01:07:37.980 --> 01:07:39.440
+Robert Barr: So let's run it.
+
+539
+01:07:42.660 --> 01:08:04.890
+Robert Barr: and then they're going to provide you with some code and some hints to take a look at what's going on in there. So our first rule be. Protect all the infants. We want to find the volume cut off that protects the infants. So where? What are we going to find as a cut off? Because, remember, in order to age the abalone. You have to kill it.
+
+540
+01:08:05.250 --> 01:08:09.340
+but give us the largest possible of harvest adults, right?
+
+541
+01:08:09.390 --> 01:08:21.620
+Robert Barr: So we want to save the infants so we can grow them and eat them eventually, Yum. And then we want to harvest all the adults, so we can achieve this by using the volume of the largest infant as our cut off.
+
+542
+01:08:21.620 --> 01:08:39.939
+Robert Barr: You are given the code below to identify the largest infant volume, and to return the proportion of adults harvested. You will need to modify this later code to return the proportion of infants harvesting the cut off. Remember, we will harvest any individual
+
+543
+01:08:39.939 --> 01:08:46.040
+Robert Barr: greater than the cutoff. So what is the cut off. The cut off is the max, and
+
+544
+01:08:46.170 --> 01:09:07.970
+Robert Barr: is the take by going through all of the volumes where it's infant right, and taking the maximum value of that. So this is the largest infant. So you're gonna have to do this for the you will need to modify the coach or turn the proportion of infants. Okay, so they're giving you the cut off here.
+
+545
+01:09:08.550 --> 01:09:14.200
+Robert Barr: They're giving you the proportion of adults by looking for adults. So you've got
+
+546
+01:09:14.240 --> 01:09:27.729
+Robert Barr: an adult is anything greater than the Max infant volume. And then they're saying, Add the code to calculate the proportion of the infants, so I will let you play with that.
+
+547
+01:09:28.330 --> 01:09:33.450
+Robert Barr: And then, if we use the largest infant volume, we harvest approximately 28,
+
+548
+01:09:33.800 --> 01:09:45.800
+Robert Barr: 24.8% adults and 0 infants as expected. So you will prove that. Okay, email me with questions. I want to let you try and play with that.
+
+549
+01:09:45.899 --> 01:09:51.710
+Robert Barr: Okay? And then you're going to do essentially something very similar. But you're going to use the median
+
+550
+01:09:51.930 --> 01:10:01.400
+Robert Barr: and the adult harvest volumes right, and they give you all the steps on what to do. There. Then you're going to plot it. and you will be good to go
+
+551
+01:10:02.510 --> 01:10:05.730
+Robert Barr: all right. Finally, in Section 7.
+
+552
+01:10:09.380 --> 01:10:17.910
+Robert Barr: They're talking about some harvest strategies and what you're going to do here is you're going to take a look at
+
+553
+01:10:18.120 --> 01:10:21.510
+the proportion of adults
+
+554
+01:10:21.520 --> 01:10:29.320
+Robert Barr: to the proportion of infants. They give you essentially the code to do that. Here.
+
+555
+01:10:30.870 --> 01:10:36.810
+Robert Barr: right. you just basically this is basically a copy and paste. So i'm going to copy that.
+
+556
+01:10:36.880 --> 01:10:39.480
+Robert Barr: And you can call that difference
+
+557
+01:10:45.690 --> 01:10:55.130
+Robert Barr: something like difference. And I just copying and pasting it differences that I didn't run the I didn't run. Well, let's see. Did I run this? I thought I did.
+
+558
+01:10:56.710 --> 01:10:58.980
+Robert Barr: Do. I have prop adults.
+
+559
+01:10:59.930 --> 01:11:04.430
+Robert Barr: Yeah. So let me. So should
+
+560
+01:11:05.800 --> 01:11:08.740
+Robert Barr: it should work. So in that earlier code. Yep. Oh.
+
+561
+01:11:11.440 --> 01:11:12.170
+Robert Barr: oh.
+
+562
+01:11:16.440 --> 01:11:19.310
+Robert Barr: we'll syntax Er: okay. So I get the difference.
+
+563
+01:11:19.340 --> 01:11:25.840
+Robert Barr: Then you are going to take a look at the curve code is provided for you.
+
+564
+01:11:25.970 --> 01:11:27.720
+Robert Barr: So you just run that.
+
+565
+01:11:37.050 --> 01:11:37.810
+Robert Barr: Okay.
+
+566
+01:11:39.720 --> 01:11:44.970
+Robert Barr: since curve smoothing is not studied in the course the code is supplied. So you take, you know.
+
+567
+01:11:45.750 --> 01:11:55.100
+Robert Barr: So they give you the code to to smooth the curve. Then you are going to plot the differences. and you're going to. Then
+
+568
+01:11:56.240 --> 01:11:58.310
+Robert Barr: you know you're going to.
+
+569
+01:11:58.710 --> 01:12:01.660
+Robert Barr: This is a pretty big plot
+
+570
+01:12:02.830 --> 01:12:08.340
+Robert Barr: again. You you're welcome to use Gg: plot or base. R.
+
+571
+01:12:08.470 --> 01:12:14.340
+Robert Barr: I will show you what the solution is to look like.
+
+572
+01:12:21.010 --> 01:12:22.420
+See here.
+
+573
+01:12:23.790 --> 01:12:26.000
+Robert Barr: you're going to try and come up with
+
+574
+01:12:26.610 --> 01:12:29.040
+Robert Barr: these types of plants. Okay.
+
+575
+01:12:29.310 --> 01:12:43.660
+Robert Barr: So you're going to see where you know you're going to take a look at the difference in proportions. Harvested by the volume. Here's a nice cut off. Okay. then, you're going to take a look at the proportion of adults and infants protected
+
+576
+01:12:43.680 --> 01:12:52.910
+Robert Barr: right? And you know the goal is, you know you've got your medium line there, right? So you're You're gonna have a medium line.
+
+577
+01:12:53.030 --> 01:12:56.080
+and you're trying to find
+
+578
+01:12:56.500 --> 01:12:58.330
+Robert Barr: You know the largest.
+
+579
+01:12:59.550 --> 01:13:04.670
+Robert Barr: you know. proportion of adults to infants
+
+580
+01:13:04.770 --> 01:13:10.690
+Robert Barr: because you're trying to protect the infants. So i'm going to let you
+
+581
+01:13:11.150 --> 01:13:15.470
+Robert Barr: play with that. See what you come up with, email me for questions.
+
+582
+01:13:16.540 --> 01:13:18.390
+Robert Barr: and then, finally.
+
+583
+01:13:21.860 --> 01:13:25.760
+Robert Barr: they give you some alternatives ways to do the cut off.
+
+584
+01:13:26.220 --> 01:13:36.520
+Robert Barr: Okay. So again, a lot of the code is provided, and you take that code and you modify it. Section 9 is going to take a look at a rock curve
+
+585
+01:13:37.960 --> 01:13:44.120
+Robert Barr: and interpreting the rock curve. Okay, so you're gonna want to get something like this.
+
+586
+01:13:45.620 --> 01:13:47.730
+Robert Barr: where you're looking at
+
+587
+01:13:48.770 --> 01:13:57.360
+Robert Barr: the cutoffs for adults and infants in terms of you know. understanding what a rock curve gives you. So you're going to interpret that.
+
+588
+01:14:00.260 --> 01:14:06.560
+Robert Barr: And then, Section 10, You're going to build a nice table of your results.
+
+589
+01:14:06.810 --> 01:14:10.840
+Robert Barr: You can use that cable function. You can
+
+590
+01:14:13.330 --> 01:14:19.460
+Robert Barr: use HTML: you can. You know there's all sorts of of options for you there
+
+591
+01:14:21.750 --> 01:14:32.690
+Robert Barr: to build the table. and then, finally, you are going to have some essay questions at the bottom on
+
+592
+01:14:33.100 --> 01:14:45.730
+Robert Barr: your final analysis. So that is an overview of the final data analysis assignment Number 2, I
+
+593
+01:14:46.000 --> 01:14:50.970
+Robert Barr: i'm available for questions again during email throw some
+
+594
+01:14:50.980 --> 01:14:52.580
+Robert Barr: questions in the chat.
+
+595
+01:14:52.690 --> 01:14:59.110
+Robert Barr: and I wish you the best of success, and looking forward to seeing how all you do have a great week, everybody.
+

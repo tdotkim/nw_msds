@@ -1,0 +1,54 @@
+---
+title: "Untitled"
+output: html_document
+date: "2023-02-17"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+
+list1 = c(2,5,8,10,12)
+list2 = c(7,11,13,20,24)
+
+our_model <- lm(list2 ~ list1)
+summary(our_model)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+
+xvals <- c(1,2,3,4,5,6,7,8,9,10)
+yvals <- c(1.24,5.23,7.24,7.60,9.97,14.31,13.99,14.88,18.04,20.70)
+
+cor.test(x = xvals, y = yvals,
+         method = "pearson")
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+```{r pressure, echo=FALSE}
+
+#z = (p1 - p2) / sqrt(p(1-p)) * sqrt(1/n1 + 1/n2)
+p1 - p2 = 39/100 - 49/100
+p = x1 + x2/ n1 + n2
+39+49/100+100 = .44
+1-p = .56
+
+SE = sqrt [ s21 / n1 + s22 / n2 ]
+
+```

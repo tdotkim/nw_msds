@@ -1,0 +1,124 @@
+---
+title: "test3"
+output: html_document
+date: "2023-02-09"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## q1
+
+Given IQ scores are approximately normally distributed with a mean of 100 and standard
+deviation of 15, the proportion of people with IQs above 130 is:
+
+```{r cars}
+pnorm(130,mean=100,sd=15,lower.tail=FALSE)
+
+
+```
+## q2
+
+In 1923, Babe Ruth had 522 at bats with 205 hits. Assuming that the binomial distribution can be appropriately applied, find the expected number of hits in 529 at bats.
+
+```{r cars}
+
+prob <- 205/522
+prob * 529
+
+
+```
+## q3
+
+(7) Use the information provided to determine a 95% confidence interval for the population variance. 
+
+A researcher was interested in the variability in service time (in hours) spent by mechanics fixing the same automotive problem.  A random sample was taken resulting in a sample of size 20 from a substantial file of reported experience.  The summary statistics are as follows:  n = 20, sample mean = 13.8 hours, sample standard deviation = 3.9 hours.  Assume service time follows a normal distribution.  Round to two decimal places.
+
+```{r pressure, echo=FALSE}
+
+
+q3_n <- 20
+q3_mean <- 13.8
+q3_std <- 3.9
+
+q3_ci <- .95
+q3_alpha <- 1 - q3_ci
+
+q3_alpha <- qchisq(0.025,df=19)
+q3_minusalpha <- qchisq(0.975,df=19)
+q3_alpha
+q3_minusalpha
+
+qchisq(c(.025,.975),df=19, lower.tail=FALSE)
+```
+
+## q7
+(6) Use the information to find the minimum sample size required to estimate an unknown population mean µ.  Margin of error: $110, confidence level: 95%, σ = $500.
+
+```{r pressure, echo=FALSE}
+
+
+q7_err <- 110
+q7_ci <- .95
+q7_sig <- 500
+
+#e = standard error * zscore 
+#500/sqrt(n) * 1.96 = 110
+#500/sqrt(n) = 110/1.96
+#500 = 56.12244 * sqrt(n)
+#sqrt(n) = 500/56.12244
+zstar <- qnorm(.975) 
+sigma <- 500 
+E <- 110 
+(zstar^2)*(sigma^2/E^2)
+
+
+```
+
+## q8
+
+Suppose the respective probabilities are 0.7, 0.2, and 0.1 that a person applying for a driver’s
+license in Saskatchewan will require 1, 2, or 3 attempts in order to obtain a license. Let X
+be a random variable, the number of attempts in order to obtain a license. Find the mean
+(expected value) of X.
+
+```{s}
+#define values
+vals <- c(1,2,3)
+
+#define probabilities
+probs <- c(.7,.2,.1)
+sum(vals*probs)
+```
+
+## q9
+
+If you wanted to estimate the true percentage of all voters in Canada who are in favor of
+abolition of the senate, and if you wanted your maximum error of estimate to be 6% with
+a confidence level of 95%, what would the required sample size be?
+
+```{r pressure}
+
+zscore <- 1.96
+zsq <- zscore^2
+q9p <- .5
+esquared <- .0036
+
+#me = 1.96 * sqrt(p(1-p)/n)
+#.06 = 1.96 * sqrt(.25/n)
+# .06/1.96 = sqrt(.25/n)
+# (.06/1.96)^2 = .25/n
+# n = .25/((.06/1.96)^2)
+.25/((.06/1.96)^2)
+```
+
+## q10
+
+(10) Assume normality and use the information given to find the p-value.  Based on the p-value estimated, determine if the null hypothesis should be rejected at a 0.1 significance level.  Select the correct answer if the test statistic in a two-tailed test is z= -1.63.  Note: Remember that it is a 2-sided test.
+
+```{r pressure}
+
+2*pnorm(q=-1.63)
+pnorm(q=-1.63, lower.tail=TRUE)
+```

@@ -1,0 +1,115 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+
+
+
+q1
+```{r}
+
+q1_data <- c(1.3,2.2,2.7,3.1,3.3,3.7)
+
+quantile(q1_data,type=7)
+
+quantile(q1_data,type=7,probs=c(.33))
+```
+
+q3
+```{r}
+
+vals <- c(0,1,2,3)
+probs <- c(0.749,0.225,0.024,0.002)
+
+exp_val <- weighted.mean(vals, probs)
+exp_val
+
+#variance
+exp_var <- sum((vals-exp_val)^2*probs)
+exp_var
+```
+
+q4
+```{r}
+#lower = false means get right end of the probability
+q4 <- ppois(4, lambda=2, lower=FALSE)
+q4
+
+```
+
+q5
+```{r}
+
+q5_prob <- 0.7
+q5_n <- 76
+q5_q <- 1 - q5_prob
+q5_mean <- q5_prob*q5_n
+
+q5_std <- ((q5_prob*q5_n*q5_q)^.5)
+
+q5_ans <- 1-pnorm(50,mean=q5_mean,sd=q5_std)
+
+q5_ans
+
+q5_alt <- dnorm(50,q5_mean,q5_std)
+
+q5_alt
+```
+
+q7
+```{r}
+
+z <- qnorm(0.45,mean=1050,sd=225)
+z
+
+```
+
+q8
+```{r}
+
+#let a =  infected, and b =  tested positive
+#P(B|A)
+#now probability of testing positive, given infected
+p_b_given_a <- 0.939
+
+#P(A)
+#probability of infected
+p_a <-.058
+
+#P(B|!A)
+#probability of NOT infected and positive
+p_b_given_not_a <- .041
+
+#P(B) = P(B|A)*P(A) + P(B|!A)*P(!A)
+#now probability of person testing positive
+p_b <- p_a * p_b_given_a + ((1-p_a) * p_b_given_not_a)
+
+
+#now to get P(A|B)
+#probability of infected given tested positive
+p_a_given_b <- (p_b_given_a * p_a)/p_b
+p_a_given_b
+```
+
+```{r}
+
+dbinom(8,size=12,prob=0.25)
+
+```
+
+
