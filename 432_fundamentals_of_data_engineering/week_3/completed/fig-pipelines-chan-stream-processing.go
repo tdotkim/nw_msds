@@ -23,6 +23,10 @@ func randInt(min, max int, n int) []int {
 }
 
 func main() {
+	count := 1000000
+	newfloats := make([]float32, count)
+	newints := make([]int, count)
+
 	generator := func(done <-chan interface{}, integers []int) <-chan int {
 		intStream := make(chan int)
 		go func() {
@@ -135,8 +139,8 @@ func main() {
 	//1000000
 	//100000
 	//10000
-	floats_slice := randFloats(0, 10000000, 10000)
-	int_slice := randInt(0, 10000000, 10000)
+	floats_slice := randFloats(0, 10000000, count)
+	int_slice := randInt(0, 10000000, count)
 	fmt.Println("Int Slice size: ", len(int_slice))
 	fmt.Println("Float Slice size: ", len(floats_slice))
 	fmt.Println("\n")
@@ -145,14 +149,30 @@ func main() {
 	floatStream := floatGenerator(done, floats_slice)
 
 	intstart := time.Now()
-	multiply(done, add(done, multiply(done, intStream, 2), 1), 2)
+	intpipe := multiply(done, add(done, multiply(done, intStream, 2), 1), 2)
+	fmt.Println(int_slice[0:5])
 	intduration := time.Since(intstart)
+	i := 0
+	for v := range intpipe {
+		newints[i] = v
+		i++
+		//fmt.Println(i)
+	}
+	fmt.Println(newints[0:5])
 	fmt.Println("Int pipeline time: ", intduration)
 	fmt.Println("\n")
 
+	fmt.Println(floats_slice[0:5])
 	floatstart := time.Now()
-	floatmultiply(done, floatadd(done, floatmultiply(done, floatStream, 2), 1), 2)
+	floatpipe := floatmultiply(done, floatadd(done, floatmultiply(done, floatStream, 2), 1), 2)
 	floatduration := time.Since(floatstart)
+	j := 0
+	for v := range floatpipe {
+		newfloats[j] = v
+		j++
+		//fmt.Println(j)
+	}
+	fmt.Println(newfloats[0:5])
 	fmt.Println("Float pipeline time: ", floatduration)
 
 	//for v := range pipeline {

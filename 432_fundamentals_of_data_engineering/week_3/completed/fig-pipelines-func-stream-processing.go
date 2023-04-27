@@ -23,6 +23,9 @@ func randInt(min, max int, n int) []int {
 }
 
 func main() {
+	count := 1000000
+	newfloats := make([]float32, count)
+	newints := make([]int, count)
 	multiply := func(value, multiplier int) int {
 		return value * multiplier
 	}
@@ -31,14 +34,15 @@ func main() {
 		return value + additive
 	}
 
-	ints := randInt(0, 10000000, 10000)
-
+	ints := randInt(0, 10000000, count)
+	fmt.Println(ints[0:5])
 	start := time.Now()
-	for _, v := range ints {
-		(multiply(add(multiply(v, 2), 1), 2))
+	for i, v := range ints {
+		newints[i] = (multiply(add(multiply(v, 2), 1), 2))
 	}
+	fmt.Println(newints[0:5])
 	duration := time.Since(start)
-	fmt.Println("Int 10K time: ", duration)
+	fmt.Println("Int time:", duration)
 
 	float_multiply := func(value, multiplier float32) float32 {
 		return value * multiplier
@@ -48,12 +52,13 @@ func main() {
 		return value + additive
 	}
 
-	floats := randFloats(0, 10000000, 10000)
-
+	floats := randFloats(0, 10000000, count)
+	fmt.Println(floats[0:5])
 	start = time.Now()
-	for _, v := range floats {
-		(float_multiply(float_add(float_multiply(v, 2), 1), 2))
+	for i, v := range floats {
+		newfloats[i] = (float_multiply(float_add(float_multiply(v, 2), 1), 2))
 	}
 	duration = time.Since(start)
+	fmt.Println(newfloats[0:5])
 	fmt.Println("Float time: ", duration)
 }

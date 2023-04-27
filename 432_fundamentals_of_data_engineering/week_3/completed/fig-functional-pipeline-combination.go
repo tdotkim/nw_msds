@@ -56,30 +56,41 @@ func randInt(min, max int, n int) []int {
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
+	count := 1000000
+	newfloats := make([]float32, count)
+	newints := make([]int, count)
+
 	//chose float 32 to save on some memory
 	//big = 1M
 	//med = 100K
 	//small = 10k
 	//doing the floats
-	floats_slice := randFloats(0, 10000000, 1000000)
+	floats_slice := randFloats(0, 10000000, count)
 
 	fmt.Println("Floats")
+	fmt.Println(floats_slice[0:5])
 	start := time.Now()
-
-	do_add_float(do_mult_float(floats_slice, 2), 1)
-
+	for i, v := range do_add_float(do_mult_float(floats_slice, 2), 1) {
+		newfloats[i] = v
+	}
+	fmt.Println(newfloats[0:5])
 	duration := time.Since(start)
 	fmt.Println("Float time: ", duration)
 	fmt.Println("----------------------")
 
 	//doing the ints
-	int_slice := randInt(0, 10000000, 1000000)
+	int_slice := randInt(0, 10000000, count)
 
 	fmt.Println("----------------------")
 	fmt.Println("Int")
+	fmt.Println(int_slice[0:5])
 	start = time.Now()
-	do_add_int(do_mult_int(int_slice, 2), 1)
+	for i, v := range do_add_int(do_mult_int(int_slice, 2), 1) {
+		newints[i] = v
+	}
+	fmt.Println(newints[0:5])
 	duration = time.Since(start)
+
 	fmt.Println("Int time: ", duration)
 	fmt.Println("----------------------")
 
