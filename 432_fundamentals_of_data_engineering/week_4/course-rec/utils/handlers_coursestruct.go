@@ -125,7 +125,8 @@ func SearchHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var Body string
-	courseid := paramStr[0]
+	courseid := paramStr[2]
+	fmt.Println(courseid)
 	t := Search(courseid)
 	if t == nil {
 		w.WriteHeader(http.StatusNotFound)
@@ -249,7 +250,7 @@ func Search(key string) *MSDSCourse {
 
 func MatchID(s string) bool {
 	t := []byte(s)
-	re := regexp.MustCompile(`[A-Za-z]+ [0-9]+-[A-Za-z]+`)
+	re := regexp.MustCompile(`[A-Za-z][0-9]+`)
 	return re.Match(t)
 }
 
