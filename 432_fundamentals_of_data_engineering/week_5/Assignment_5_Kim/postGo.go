@@ -1,9 +1,7 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
-	"time"
 
 	"github.com/mactsouk/post05"
 	"main.go/utils"
@@ -39,7 +37,7 @@ func main() {
 	post05.Password = "root"
 	post05.Database = "go"
 
-	data, err := post05.ListUsers()
+	/*data, err := post05.ListUsers()
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -88,7 +86,15 @@ func main() {
 	err = post05.UpdateUser(t)
 	if err != nil {
 		fmt.Println(err)
-	}
-	test := utils.MSDSCourse{CID:"rrrrr",CNAME:"rrrrr",CPREREQ:"ttttt"}
+	}*/
+	test := utils.MSDSCourse{CID: "MSDS401", CNAME: "Applied Statistics with R", CPREREQ: "none"}
+	test1 := utils.MSDSCourse{CID: "MSDS402", CNAME: "Data Science and Research Practice", CPREREQ: "none"}
+	test2 := utils.MSDSCourse{CID: "MSDS410", CNAME: "Supervised Learning Methods", CPREREQ: "MSDS400,MSDS401"}
+	test3 := utils.MSDSCourse{CID: "MSDS411", CNAME: "Unsupervised Learning Methods", CPREREQ: "MSDS400,MSDS401"}
+	test4 := utils.MSDSCourse{CID: "MSDS432", CNAME: "Foundations of Data Engineering", CPREREQ: "MSDS400,MSDS420"}
 	utils.AddCourse(test)
+	utils.AddCourse(test1)
+	utils.AddCourse(test2)
+	utils.AddCourse(test3)
+	utils.AddCourse(test4)
 }

@@ -3,7 +3,7 @@ version: '3'
 services:
   postgres:
     image: postgres
-    restart: always
+    restart: never
     container_name: postgres
     environment:
       - POSTGRES_USER=postgres

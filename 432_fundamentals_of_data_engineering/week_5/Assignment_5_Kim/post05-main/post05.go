@@ -11,11 +11,11 @@ import (
 
 // Connection details
 var (
-	Hostname = ""
-	Port     = 2345
-	Username = ""
-	Password = ""
-	Database = ""
+	Hostname = "localhost"
+	Port     = 5433
+	Username = "postgres"
+	Password = "root"
+	Database = "go"
 )
 
 // Userdata is for holding full user data
@@ -27,7 +27,6 @@ type Userdata struct {
 	Surname     string
 	Description string
 }
-
 
 func openConnection() (*sql.DB, error) {
 	// connection string
@@ -209,6 +208,3 @@ func UpdateUser(d Userdata) error {
 
 	return nil
 }
-
-
-

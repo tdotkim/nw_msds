@@ -1,0 +1,11 @@
+version: "3"
+services:
+  coding:
+    container_name: sample_env
+    build: 
+      dockerfile: ./tk_sample_env.dockerfile
+    tty: true
+    ports:
+      - "8888:8888"
+    volumes:
+      - ~./:/home/stuff
