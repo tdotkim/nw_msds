@@ -1,0 +1,79 @@
+GLPK 4.65 - SENSITIVITY ANALYSIS REPORT                                                                         Page   1
+
+Problem:    
+Objective:  OBJ = 22350 (MINimum)
+
+   No. Row name     St      Activity         Slack   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+     1 Constraint_1 NL    -200.00000        .         -200.00000     -240.00000      -5.00000   22150.00000 Route_(5,_3)
+                                           5.00000          +Inf     -180.00000          +Inf   22450.00000 Constraint_7
+
+     2 Constraint_2 NL     100.00000        .          100.00000       60.00000     -35.00000   20950.00000 Route_(5,_3)
+                                          35.00000          +Inf      120.00000          +Inf   23050.00000 Constraint_7
+
+     3 Constraint_3 NL      60.00000        .           60.00000       20.00000     -85.00000   18950.00000 Route_(5,_3)
+                                          85.00000          +Inf       80.00000          +Inf   24050.00000 Constraint_7
+
+     4 Constraint_4 NL      80.00000        .           80.00000       40.00000     -45.00000   20550.00000 Route_(5,_3)
+                                          45.00000          +Inf      100.00000          +Inf   23250.00000 Constraint_7
+
+     5 Constraint_5 NL     170.00000        .          170.00000      -40.00000     -45.00000   12900.00000 Route_(7,_5)
+                                          45.00000          +Inf      190.00000          +Inf   23250.00000 Constraint_7
+
+     6 Constraint_6 NL      70.00000        .           70.00000         .          -50.00000   18850.00000 Route_(7,_6)
+                                          50.00000          +Inf       90.00000          +Inf   23350.00000 Constraint_7
+
+     7 Constraint_7 BS    -280.00000     -20.00000    -300.00000     -280.00000          -Inf          +Inf
+                                            .               +Inf     -300.00000       5.00000   20950.00000 Constraint_1
+
+GLPK 4.65 - SENSITIVITY ANALYSIS REPORT                                                                         Page   2
+
+Problem:    
+Objective:  OBJ = 22350 (MINimum)
+
+   No. Column name  St      Activity      Obj coef   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+     1 Route_(1,_2) BS     120.00000      30.00000        .           160.00000      25.00000   21750.00000 Route_(7,_4)
+                                            .          200.00000      100.00000      35.00000   22950.00000 Constraint_1
+
+     2 Route_(1,_4) BS      80.00000      40.00000        .           100.00000      -5.00000   18750.00000 Constraint_4
+                                            .          200.00000       40.00000      45.00000   22750.00000 Route_(7,_4)
+
+     3 Route_(2,_3) BS      20.00000      50.00000        .            60.00000      45.00000   22250.00000 Route_(7,_4)
+                                            .          200.00000         .           55.00000   22450.00000 Constraint_1
+
+     4 Route_(3,_5) NL        .           35.00000        .           -40.00000     -40.00000   19350.00000 Route_(5,_3)
+                                          75.00000     200.00000      160.00000          +Inf   34350.00000 Route_(5,_3)
+
+     5 Route_(5,_3) BS      40.00000      40.00000        .            60.00000      35.00000   22150.00000 Constraint_1
+                                            .          200.00000      -40.00000      45.00000   22550.00000 Route_(7,_4)
+
+     6 Route_(5,_4) NL        .           30.00000        .           -20.00000        .        21750.00000 Route_(2,_3)
+                                          30.00000     200.00000       40.00000          +Inf   23550.00000 Route_(5,_3)
+
+     7 Route_(5,_6) NL        .           35.00000        .          -210.00000       5.00000   16050.00000 Route_(7,_5)
+                                          30.00000     200.00000       70.00000          +Inf   24450.00000 Route_(7,_6)
+
+     8 Route_(6,_5) NL        .           25.00000        .           -70.00000      -5.00000   20250.00000 Route_(7,_6)
+                                          30.00000     200.00000      210.00000          +Inf   28650.00000 Route_(7,_5)
+
+     9 Route_(7,_4) NL        .           50.00000        .           -20.00000      45.00000   22250.00000 Route_(2,_3)
+                                           5.00000     300.00000       40.00000          +Inf   22550.00000 Route_(5,_3)
+
+    10 Route_(7,_5) BS     210.00000      45.00000        .           230.00000      40.00000   21300.00000 Constraint_1
+                                            .          300.00000      170.00000      50.00000   23400.00000 Route_(7,_4)
+
+GLPK 4.65 - SENSITIVITY ANALYSIS REPORT                                                                         Page   3
+
+Problem:    
+Objective:  OBJ = 22350 (MINimum)
+
+   No. Column name  St      Activity      Obj coef   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+    11 Route_(7,_6) BS      70.00000      50.00000        .           280.00000      20.00000   20250.00000 Route_(6,_5)
+                                            .          300.00000      -20.00000      80.00000   24450.00000 Route_(5,_6)
+
+End of report

@@ -1,0 +1,44 @@
+GLPK 4.65 - SENSITIVITY ANALYSIS REPORT                                                                         Page   1
+
+Problem:    
+Objective:  OBJ = 32540 (MAXimum)
+
+   No. Row name     St      Activity         Slack   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+     1 _C1          NL      88.00000        .           88.00000       85.00000          -Inf   32600.00000 _C3
+                                         -20.00000          +Inf       90.00000      20.00000   32500.00000 _C2
+
+     2 _C2          BS      27.60000      -1.60000      26.00000       10.00000     -25.00000   31850.00000 _C1
+                                            .               +Inf       27.60000          +Inf          +Inf
+
+     3 _C3          BS     258.80000       1.20000          -Inf      258.00000     -50.00000   19600.00000 _C1
+                                            .          260.00000      258.80000          +Inf          +Inf
+
+     4 _C4          NU        .             .               -Inf       -1.60000    -400.00000   31900.00000 _C2
+                                         400.00000        .              .40000          +Inf   32700.00000 _C3
+
+     5 _C5          NU      98.00000        .               -Inf       96.40000    -350.00000   31980.00000 _C2
+                                         350.00000      98.00000       98.40000          +Inf   32680.00000 _C3
+
+     6 _C6          BS      72.12000        .88000          -Inf       71.00000    -500.00000   -3520.00000 _C5
+                                            .           73.00000       72.20000     500.00000   68600.00000 _C1
+
+GLPK 4.65 - SENSITIVITY ANALYSIS REPORT                                                                         Page   2
+
+Problem:    
+Objective:  OBJ = 32540 (MAXimum)
+
+   No. Column name  St      Activity      Obj coef   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+     1 Cars         BS      88.00000     300.00000        .            88.00000          -Inf          -Inf
+                                            .               +Inf       90.00000     320.00000   34300.00000 _C1
+
+     2 Machine_1s   BS      98.00000     -50.00000        .            96.40000    -400.00000   -1760.00000 _C5
+                                            .               +Inf       98.00000          +Inf          +Inf
+
+     3 Trucks       BS      27.60000     400.00000        .            26.00000     375.00000   31850.00000 _C1
+                                            .               +Inf       27.60000          +Inf          +Inf
+
+End of report
