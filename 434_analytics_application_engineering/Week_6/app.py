@@ -8,11 +8,11 @@ from flask import Flask, render_template, request, escape
 app = Flask(__name__)
 
 #ONLY FOR LOCAL USE
-#CREDS = "C:\\Users\\TK\Desktop\\msds434-module5-af0b121e8d76.json"
-#client = bigquery.Client.from_service_account_json(json_credentials_path=CREDS,project='msds434-module5')
-client = bigquery.Client(project='msds434-module5')
+CREDS = "C:\\Users\\TK\Desktop\\msds434-module6-dba29024def3.json"
+client = bigquery.Client.from_service_account_json(json_credentials_path=CREDS,project='msds434-module6')
+#client = bigquery.Client(project='msds434-module6')
 
-dset = 'module5'
+dset = 'module6'
 
 @app.route('/')
 def index():
@@ -26,109 +26,51 @@ def form():
 def data():
     if request.method == 'POST':
         form_data = request.form
-        start = str(form_data['Start'])
-        end = str(form_data['End'])
-        pstart = str(form_data['Prediction Start'])
-        pend = str(form_data['Prediction End'])
-        name = str(form_data['Model Name'])
-        query = """
-                CREATE OR REPLACE MODEL {0}.{1}
-                OPTIONS(model_type='logistic_reg',
-                        input_label_cols=['isBuyer'])
-                AS
-                SELECT
-                    IF(totals.transactions IS NULL, 0, 1) as isBuyer,
-                    IFNULL(totals.pageviews,0) AS pageviews,
-                    IFNULL(totals.timeOnSite,0) AS timeOnSite,
-                    IFNULL(totals.newVisits,0) AS isNewVisit,
-                    IF(device.deviceCategory = 'mobile', 1, 0) as isMobile,
-                    IF(device.deviceCategory = 'desktop', 1, 0) as isDesktop,
-                    IF(trafficSource.medium in ('affiliate','cpc','cpm'),1,0) AS isPaidTraffic
-                FROM
-                    `bigquery-public-data.google_analytics_sample.ga_sessions_*`
-                WHERE
-                    _TABLE_SUFFIX BETWEEN @start AND @end
-            """.format(dset, name)
+        age = str(form_data['Age'])
+        workclass = str(form_data['Workclass'])
+        marital_status = str(form_data['marital_status'])
+        education_num = str(form_data['education_num'])
+        occupation = str(form_data['Occupation'])
+        hours_per_week = str(form_data['hours_per_week'])
+        # submit the input 
+        records = [
+            {'age':age,
+             'workclass':workclass,
+             'marital_status':marital_status,
+             'education_num':education_num,
+             'occupation':occupation,
+             'hours_per_week':hours_per_week}
+        ]
 
-
-        job_config = bigquery.QueryJobConfig(
-            query_parameters=[
-                bigquery.ScalarQueryParameter("start", "STRING", start),
-                bigquery.ScalarQueryParameter("end", "STRING", end),
+        df = pd.DataFrame(
+            records,
+            columns = [
+                'age',
+                'workclass',
+                'marital_status',
+                'education_num',
+                'occupation',
+                'hours_per_week'
             ]
         )
 
-        query_job = client.query(query, job_config=job_config)  
+        job = client.load_table_from_dataframe(
+            df, 'msds434-module6.module6.input'
+        )  
 
-        try: 
-            for row in query_job:
-                print(row)
-        except:
-            print("ignoring this error: {}".format(sys.exc_info())) #  the model was successfully created
-
-        # do the eval
-        query = """
-        SELECT *
-        FROM ML.EVALUATE(MODEL {0}.{1},
-        (
-        SELECT
-        IF(totals.transactions IS NULL, 0, 1) as isBuyer,
-        IFNULL(totals.pageviews,0) AS pageviews,
-        IFNULL(totals.timeOnSite,0) AS timeOnSite,
-        IFNULL(totals.newVisits,0) AS isNewVisit,
-        IF(device.deviceCategory = 'mobile', 1, 0) as isMobile,
-        IF(device.deviceCategory = 'desktop', 1, 0) as isDesktop,
-        IF(trafficSource.medium in ('affiliate','cpc','cpm'),1,0) AS isPaidTraffic
-        FROM
-        `bigquery-public-data.google_analytics_sample.ga_sessions_*`
-        WHERE
-        _TABLE_SUFFIX BETWEEN @start AND @end
-        ),
-        STRUCT(0.5 AS threshold)
-        )
-        """.format(dset, name)
-
-
-        job_config = bigquery.QueryJobConfig(
-            query_parameters=[
-                bigquery.ScalarQueryParameter("start", "STRING", start),
-                bigquery.ScalarQueryParameter("end", "STRING", end),
-            ]
-        )
-
-        df_eval = client.query(query, job_config=job_config).to_dataframe()
+        job.result()
 
         # do the predict
         query = """
         SELECT *
-        FROM ML.PREDICT(MODEL {0}.{1},
+        FROM ML.PREDICT(MODEL msds434-module6.module6.model1',
         (
-        SELECT
-        IF(totals.transactions IS NULL, 0, 1) as isBuyer,
-        IFNULL(totals.pageviews,0) AS pageviews,
-        IFNULL(totals.timeOnSite,0) AS timeOnSite,
-        IFNULL(totals.newVisits,0) AS isNewVisit,
-        IF(device.deviceCategory = 'mobile', 1, 0) as isMobile,
-        IF(device.deviceCategory = 'desktop', 1, 0) as isDesktop,
-        IF(trafficSource.medium in ('affiliate','cpc','cpm'),1,0) AS isPaidTraffic
+        SELECT *
         FROM
-        `bigquery-public-data.google_analytics_sample.ga_sessions_*`
-        WHERE
-        _TABLE_SUFFIX BETWEEN @start AND @end
-        ),
-        STRUCT(0.5 AS threshold)
-        )
-        """.format(dset, name)
+        `msds434-module6.module6.input`
+        """
 
-
-        job_config = bigquery.QueryJobConfig(
-            query_parameters=[
-                bigquery.ScalarQueryParameter("start", "STRING", start),
-                bigquery.ScalarQueryParameter("end", "STRING", end),
-            ]
-        )
-
-        df = client.query(query, job_config=job_config).to_dataframe()
+        df = client.query(query).to_dataframe()
         df2 = pd.DataFrame(df.explode('predicted_isBuyer_probs')['predicted_isBuyer_probs'])
         df2 = df2['predicted_isBuyer_probs'].apply(pd.Series)
         pivoted = df2.pivot_table(index=df2.index,columns='label',values='prob',aggfunc=np.mean)
@@ -136,7 +78,7 @@ def data():
         merged = df.drop('predicted_isBuyer_probs',axis=1)
         merged = merged.join(pivoted)
         merged
-        return render_template('data.html',tables=[df_eval.to_html(classes='data'),merged.to_html(max_rows=20,classes='data')], titles=['eval scores','predictions'])
+        return render_template('data.html',tables=[merged.to_html(max_rows=20,classes='data')], titles=['predictions'])
     
  
  
