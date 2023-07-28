@@ -26,12 +26,12 @@ def form():
 def data():
     if request.method == 'POST':
         form_data = request.form
-        age = str(form_data['Age'])
+        age = form_data['Age']
         workclass = str(form_data['Workclass'])
         marital_status = str(form_data['marital_status'])
-        education_num = str(form_data['education_num'])
+        education_num = form_data['education_num']
         occupation = str(form_data['Occupation'])
-        hours_per_week = str(form_data['hours_per_week'])
+        hours_per_week = form_data['hours_per_week']
         # submit the input 
         records = [
             {'age':age,
@@ -54,8 +54,22 @@ def data():
             ]
         )
 
+        job_config = bigquery.LoadJobConfig(
+        
+            schema = [
+                bigquery.SchemaField("age", "INTEGER"),
+                bigquery.SchemaField("workclass", "STRING"),
+                bigquery.SchemaField("marital_status", "STRING"),
+                bigquery.SchemaField("education_num", "INTEGER"),
+                bigquery.SchemaField("occupation", "STRING"),
+                bigquery.SchemaField("hours_per_week", "INTEGER"),
+            ],
+            autodetect=False,
+            source_format=bigquery.SourceFormat.CSV,
+            write_disposition="WRITE_TRUNCATE" #comment this out to append
+        )
         job = client.load_table_from_dataframe(
-            df, 'msds434-module6.module6.input'
+            df, 'msds434-module6.module6.input',job_config=job_config
         )  
 
         job.result()
@@ -63,19 +77,20 @@ def data():
         # do the predict
         query = """
         SELECT *
-        FROM ML.PREDICT(MODEL msds434-module6.module6.model1',
-        (
-        SELECT *
+        FROM ML.PREDICT(MODEL module6.model1,
+        (SELECT *
         FROM
-        `msds434-module6.module6.input`
+        `msds434-module6.module6.input`),
+        STRUCT(0.5 AS threshold)
+        )
         """
 
         df = client.query(query).to_dataframe()
-        df2 = pd.DataFrame(df.explode('predicted_isBuyer_probs')['predicted_isBuyer_probs'])
-        df2 = df2['predicted_isBuyer_probs'].apply(pd.Series)
+        df2 = pd.DataFrame(df.explode('predicted_income_bracket_probs')['predicted_income_bracket_probs'])
+        df2 = df2['predicted_income_bracket_probs'].apply(pd.Series)
         pivoted = df2.pivot_table(index=df2.index,columns='label',values='prob',aggfunc=np.mean)
-        pivoted.rename(columns={ pivoted.columns[0]: "Prob_Not_Buyer" ,pivoted.columns[1]: "Prob_IS_Buyer" }, inplace = True)
-        merged = df.drop('predicted_isBuyer_probs',axis=1)
+        pivoted.rename(columns={ pivoted.columns[0]: "prob_<=50K" ,pivoted.columns[1]: "prob_>50k" }, inplace = True)
+        merged = df.drop('predicted_income_bracket_probs',axis=1)
         merged = merged.join(pivoted)
         merged
         return render_template('data.html',tables=[merged.to_html(max_rows=20,classes='data')], titles=['predictions'])
