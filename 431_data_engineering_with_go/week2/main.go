@@ -1,8 +1,11 @@
 package main
 
 import (
+	"encoding/csv"
 	"fmt"
 	"math"
+	"os"
+	"time"
 
 	"github.com/montanaflynn/stats"
 )
@@ -89,7 +92,7 @@ func get_rsquared(regressions stats.Series, quartet stats.Series) (float64, erro
 }
 
 func main() {
-
+	start := time.Now() //start time
 	quartet1 := []stats.Coordinate{
 		{X: 10.0, Y: 8.04},
 		{X: 8.0, Y: 6.95},
@@ -156,6 +159,8 @@ func main() {
 	q1model.slope, q1model.intercept, _ = slope_intercept(q1model.sums, q1model.obs)
 	q1model.rsquared, _ = get_rsquared(q1model.regressionVals, quartet1)
 	fmt.Printf("---Quartet 1---\n")
+	fmt.Printf("Quartet 1 Sums %v\n", q1model.sums)
+	fmt.Printf("Quartet 1 Obs %v\n", q1model.obs)
 	fmt.Printf("Quartet 1 Slope %v\n", q1model.slope)
 	fmt.Printf("Quartet 1 Intercept %v\n", q1model.intercept)
 	fmt.Printf("Quartet 1 R-Squared %v\n", q1model.rsquared)
@@ -166,6 +171,8 @@ func main() {
 	q2model.slope, q2model.intercept, _ = slope_intercept(q2model.sums, q2model.obs)
 	q2model.rsquared, _ = get_rsquared(q2model.regressionVals, quartet2)
 	fmt.Printf("---Quartet 2---\n")
+	fmt.Printf("Quartet 2 Sums %v\n", q2model.sums)
+	fmt.Printf("Quartet 2 Obs %v\n", q2model.obs)
 	fmt.Printf("Quartet 2 Slope %v\n", q2model.slope)
 	fmt.Printf("Quartet 2 Intercept %v\n", q2model.intercept)
 	fmt.Printf("Quartet 2 R-Squared %v\n", q2model.rsquared)
@@ -176,6 +183,8 @@ func main() {
 	q3model.slope, q3model.intercept, _ = slope_intercept(q3model.sums, q3model.obs)
 	q3model.rsquared, _ = get_rsquared(q3model.regressionVals, quartet3)
 	fmt.Printf("---Quartet 3---\n")
+	fmt.Printf("Quartet 3 Sums %v\n", q3model.sums)
+	fmt.Printf("Quartet 3 Obs %v\n", q3model.obs)
 	fmt.Printf("Quartet 3 Slope %v\n", q3model.slope)
 	fmt.Printf("Quartet 3 Intercept %v\n", q3model.intercept)
 	fmt.Printf("Quartet 3 R-Squared %v\n", q3model.rsquared)
@@ -186,9 +195,23 @@ func main() {
 	q4model.slope, q4model.intercept, _ = slope_intercept(q4model.sums, q4model.obs)
 	q4model.rsquared, _ = get_rsquared(q4model.regressionVals, quartet4)
 	fmt.Printf("---Quartet 4---\n")
+	fmt.Printf("Quartet 4 Sums %v\n", q4model.sums)
+	fmt.Printf("Quartet 4 Obs %v\n", q4model.obs)
 	fmt.Printf("Quartet 4 Slope %v\n", q4model.slope)
 	fmt.Printf("Quartet 4 Intercept %v\n", q4model.intercept)
 	fmt.Printf("Quartet 4 R-Squared %v\n", q4model.rsquared)
 	fmt.Printf("----------------\n")
 
+	duration := time.Since(start) //end time
+	stringDuration := fmt.Sprintf("%f", duration.Seconds())
+	fmt.Println(stringDuration)
+	f, err := os.OpenFile("./runs/go_runs.csv", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	w := csv.NewWriter(f)
+	w.Write([]string{stringDuration})
+
+	w.Flush()
 }
