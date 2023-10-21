@@ -1,53 +1,33 @@
-# Batch Job Speed Test
+# Web Scraping with Go
 
 ## Project Summary
 
-For Week 4 we were tasked to create a Go script that replicated the describe() functionality of Pandas and the summary() functionality of R.
+For Week 5 we were tasked to create a Go script that replicated the web scraping functionality of Scrapy in python.
 
-For this project we replicated all 7 summary statistics: count, mean, standard deviation, min, max, 1st quartile, median, and 3rd quartile
+For this project we were able to replicate downloading the entire page as an html file and writing the title, url, and text to a JSON line separated file. However we were not able to replicate the tags scraping functionality of Scrapy.
 
-A few key issues we ran into:
+This project was done entirely with the standard library for Go to prove the robustness of the standard library and the speed of the standard library.
 
-1. Windows Defender
-
-![Alt text](go_antivirus.png)
-
-When executing the go file, we ran into a slowdown where Windows Defender was actively scanning during the execution. This might be related to an issue documented here: https://betterprogramming.pub/a-big-problem-in-go-that-no-one-talks-about-328cc3e71378. Preferably, we'd be executing all of these tests in a Linux/MacOs unix environment. 
-
-2. Script and Test Design
-
-The script as is doesn't leverage a lot of Go's strengths as we created this to mimic the read -> store -> describe structure of the py/R files. 
-
-With more time to develop this, there should be a lot of gains in speed. Reading in the CSV async might be one optimization for this as order doesn't really matter here. Calculations could also theoretically be done concurrently with the only non-async part being the data sort and the count. Finding the breakpoint for where concurrency offers a speed gain instead of a loss will be critical.
-
-Gerardi's colStatsv.3 provides a solid framework. See the folder colStats.v3 for Gerardi's base files. A question is to loop through and fire the summary functions as this program was designed to take in 1 input at a time for the column or do we fully revamp the program and create additional channels? Another design question is with Gerardi's structure, do we keep the same style as Pandas as load up the data into the object or write directly to the file? A cost consideration here would be in keeping the file open the writing to specific places without causing issues with the async write.  
-
-Also, the way that the test is done by firing the script repeatedly 100x is most likely a bottleneck, especially with Windows. 
+For future deployments, additional third-party packages should be used to simplify the process.
 
 ## Findings
+![Alt text](image.png)
 
-### 100 Runs
-![100 runs](100runs.png)
-
-Python is the fastest here by a small margin. R is notably slower than Python and Go in processing this. 
-
-### 1 Run
-
-![1 run](1runs.png)
-
-Python is the fastest here by a small margin again. 
+The python script took about 12.68 seconds to run while the go script managed a blazing fast time of 2.94 seconds. 
 
 ## Go Setup
 
 
-*week4/csv_read.go:* \
-This go file contains all of our supporting functions to read in the csv and calculate the various summary statistics. Note we follow the pandas.describe() functionalty for calculating Q1/Q3. Results may differ if using a different method, exclusive/inclusive, and so on. 
-
 *main.go:* \
 This go file is our main file. It contains the main structs to house the data and contains the write to file function. 
+
+For this project, everything was hosted in the main file for simplicity. Future projects should breakout the variety of functions to modules.
+
+The critical crawler components were built by Amit Saha in Chapter 3 & 4 from Practical Go: Building Scalable Network & Non-network Applications. 
 
 
 
 ## References
 
-Gerardi, Ricardo. 2021. Powerful Command-Line Applications in Go: Build Fast and Maintainable Tools. Raleigh, NC: The Pragmatic Bookshelf. [ISBN-13: 978-1-68050-696-9] Foreword by Steve Francis (pages xi–xiii), Chapter 5 Improving the Performance of Your CLI Tools (pages 111–162), and Chapter 7 Using the Cobra CLI Framework (pages 213–271). Available on Course Reserves.
+Saha, Amit. 2022. Practical Go: Building Scalable Network & Non-network Applications. New York: Wiley. ISBN-13: 978-1-119-77381-8. Chapter 3 Writing HTTP Clients (pages 57–80) and Chapter 4 Advanced HTTP Clients (pages 81–104). Available from Course Reserves.
+
