@@ -7,6 +7,7 @@ from flask import Flask, render_template, request, escape
 import json
 import plotly
 import plotly.graph_objects as go
+import logging
 
 app = Flask(__name__)
 
@@ -90,6 +91,7 @@ def index():
     
     # include visualizations around model accuracy
     # include summary statistics around data
+    logging.info('sample log regarding launch')
     return render_template('index.html',graphJSON=graphJSON, config=config)
 
 @app.route('/set_base_model')
@@ -161,6 +163,7 @@ def data():
         )  
 
         job.result()
+        logging.info('sample log regarding job result')
 
         # do the predict
         query = """
@@ -172,6 +175,8 @@ def data():
         """
 
         df = client.query(query).to_dataframe()
+        logging.info('sample log regarding prediction')
+        logging.info('sample message re: completion')
         return render_template('data.html',tables=[df.to_html(max_rows=20,classes='data')], titles=['predictions'])
     
  
