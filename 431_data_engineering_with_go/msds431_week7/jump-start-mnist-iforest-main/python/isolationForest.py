@@ -17,7 +17,7 @@ print("Running Python isolation forest . . . ")
 
 # isolation forest hyperparameters
 CONTAMINATION_SET = "auto"  # frequency of anomalies is unknown
-MAX_SAMPLES = "256"  # small number ensures better results
+MAX_SAMPLES = 256  # small number ensures better results
 # set to min of 256 or training sample size
 N_ESTIMATORS = 100  # another default, number of trees in ensemble
 # max_features will be set as recommended for random forests,

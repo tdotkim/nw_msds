@@ -32,37 +32,44 @@ func loadMNISTData() (images [][]float64, labels []int) {
 	return images, labels
 
 }
+
+// func below is only testing
 func makeScoreSliceTestable(mymap map[int]float64) (scores [][]string) {
 	scores = make([][]string, len(mymap)+1)
 	for i := 0; i < (len(scores)); i++ {
 		scores[i] = make([]string, 2)
-		if i == 0 { //adds header in csv for easy import into R dataframes
+		//header
+		if i == 0 {
 			scores[0][0] = "id"
 			scores[0][1] = "scores"
-		}
-		if i != 0 {
+		} else if i > 0 { // body
 			score := mymap[i-1]
 			scores[i][0] = fmt.Sprintf("%d", i-1)
 			scores[i][1] = fmt.Sprintf("%f", score)
+		} else { //error check
+			fmt.Println("error somehow")
 		}
 
 	}
 	return scores
 }
 
+// use above for testing
 func makeScoreSlice(f *iforest.Forest) (scores [][]string) {
 	scores = make([][]string, len(f.AnomalyScores)+1)
-	fmt.Println(f.AnomalyScores)
+	//fmt.Println(f.AnomalyScores)
 	for i := 0; i < (len(scores)); i++ {
 		scores[i] = make([]string, 2)
-		if i == 0 { //adds header in csv for easy import into R dataframes
+		//header
+		if i == 0 {
 			scores[0][0] = "id"
 			scores[0][1] = "scores"
-		}
-		if i != 0 {
+		} else if i > 0 { // body
 			score := f.AnomalyScores[i-1]
 			scores[i][0] = fmt.Sprintf("%d", i-1)
 			scores[i][1] = fmt.Sprintf("%f", score)
+		} else { //error check
+			fmt.Println("error somehow")
 		}
 
 	}
@@ -76,7 +83,7 @@ func main() {
 	treesNumber := 1000
 	subsampleSize := 256
 	outliersRatio := 0.01 //v2 adjust this to actually create boolean flags
-	routinesNumber := 10
+	//routinesNumber := 10 //v2 add this for concurrency. will need to rework scoresice and get indexes working correctly
 
 	//model initialization
 	forest := iforest.NewForest(treesNumber, subsampleSize, outliersRatio)
@@ -85,7 +92,7 @@ func main() {
 	forest.Train(images)
 
 	//test
-	forest.TestParallel(images, routinesNumber)
+	forest.Test(images)
 
 	//threshold := forest.AnomalyBound
 	//anomalyScores := forest.AnomalyScores
