@@ -14,7 +14,7 @@ type Page struct {
 	Body  []byte
 }
 
-func apiHandler(w http.ResponseWriter, req *http.Request) {
+func searchPage(w http.ResponseWriter, req *http.Request) {
 	t, _ := template.ParseFiles("./templates/basic.html")
 	t.Execute(w, nil)
 
@@ -36,7 +36,7 @@ func scrapeIt(w http.ResponseWriter, req *http.Request) {
 }
 
 func setupHandlers(mux *http.ServeMux) {
-	mux.HandleFunc("/search", apiHandler)
+	mux.HandleFunc("/search", searchPage)
 	mux.HandleFunc("/dosearch", scrapeIt)
 	mux.HandleFunc("/", homeHandler)
 

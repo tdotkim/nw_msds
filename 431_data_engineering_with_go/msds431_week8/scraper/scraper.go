@@ -23,11 +23,10 @@ func Scrape(inputurl string, word string) JSONoutput {
 		bundle.Url = e.Request.URL.String()
 		bundle.Word = word
 		bundle.Count = strings.Count(e.Text, word)
-		//bundled = append(bundled, bundle)
+
 	})
 
 	c.Visit(inputurl)
-	//myjson, _ := json.Marshal(bundled)
-	//return myjson
+
 	return bundle
 }
