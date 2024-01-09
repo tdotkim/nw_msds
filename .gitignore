@@ -1,0 +1,7 @@
+*.csv
+*.txt
+*.json
+*.parquet
+*.bz2
+*.zip
+*.xlsx
